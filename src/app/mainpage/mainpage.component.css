@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+
+}
+
+header{
+   display: flex;
+   align-items: center;
+   width: 97%;
+   background-color: #d9d9d9;
+   margin: 1rem;
+   flex-wrap: wrap;
+   gap: 1rem;
+}
+/* If you want to make the image adjust its size based on the screen's width, you can use vw, 
+   and if you want it to adjust based on the screen's height, you can use vh. */
+header img{
+        width: 8vw;
+        height: auto;
+        max-width: 200px;
+        min-width: 100px;
+        padding:0.3em;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    gap:3rem
+}
+.sidebar{
+    height: auto;
+    max-width: fit-content;
+    background-color: #d9d9d9;
+    margin:-0.5rem  0 0 1rem;
+    padding: 0.3rem 1rem;
+  
+}
+.link-container{
+    text-align: justify;
+}
+
+ul li {
+    list-style: none;
+    line-height: 2.6rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 19px;
+    border: 1px solid black;
+    margin-top: 6px;
+    text-align: center;
+    border-radius: 3px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    padding: 0 1em ;
+}
+ul li a{
+    text-decoration: none;
+}
+ul li a:visited{
+    color: blue;
+}
+
+li:hover{
+    background-color: white;
+    color: grey;
+}
+ul li.active {
+    background-color: orange;
+    color:white;
+    font-weight: bold;
+}
+

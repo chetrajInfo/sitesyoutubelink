@@ -1,0 +1,53 @@
+<header>
+    <img src="./assets/webyoutubelink.jpg" alt="site logo">
+
+    <div>
+        <h1><i>Useful Sites and Videos</i></h1>
+    </div> 
+</header>
+
+<div class="container">
+    <!--
+  <div class="sidebar">
+     <ul>
+        <li>Core Java</li>
+        <li>Spring Boots</li>
+        <li>Oracle Database</li>
+        <li>MySql Database</li>
+        <li>Python For AI</li>
+        <li>Machine Learning</li>
+     </ul>
+    </div>
+    -->
+  
+    <div class="sidebar">
+        <ul>
+           <li *ngFor="let site of sites" (click)="onSelect(site)"  
+            (click)="selectListItem(site)" 
+           [class.active]="selectedListItem === site">
+             {{ site.name }}
+           </li>
+        </ul>
+       </div>
+
+       <div class="link-container">
+        <ul *ngIf="selectedSite">
+          <li *ngFor="let linkObj of selectedSite.weblink">
+            <a [href]="linkObj[getKey(linkObj)]" target="_blank">
+              {{ getKey(linkObj) }}
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="link-container">
+        <ul *ngIf="selectedSite">
+          <li *ngFor="let linkObj of selectedSite.videolink">
+            <a [href]="linkObj[getKey(linkObj)]" target="_blank">
+              {{ getKey(linkObj) }}
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+</div>
