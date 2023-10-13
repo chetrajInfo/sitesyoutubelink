@@ -3,7 +3,7 @@
         "id":1,
         "name":"Core Java",
          "weblink":[
-            {"Oracle Java Tutorial":"https://docs.oracle.com/javase/tutorial/"},
+            {"Core Java Tutorial Sites Link Below":""},
             {"Head First Java": "https://www.oreilly.com/library/view/head-first-java/9781492091646/"},
             {"Thinking in Java": "https://www.amazon.com/Thinking-Java-4th-Bruce-Eckel/dp/0131872486"},
             {"Effective Java": "https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/"},
@@ -15,17 +15,128 @@
             {"The Pragmatic Programmer":"https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/"},
             {"Code Complete":"https://en.wikipedia.org/wiki/Code_Complete"}
          ],
+
          "videolink":[
-
+          {"Core Java Tutorial Video Link Below":""},
+          {"Head First Java": "https://www.oreilly.com/library/view/head-first-java/9781492091646/"},
+          {"Thinking in Java": "https://www.amazon.com/Thinking-Java-4th-Bruce-Eckel/dp/0131872486"},
+          {"Effective Java": "https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/"},
+          {"Core Java for the Impatient": "https://horstmann.com/javaimpatient/"},
+          {"Java: The Complete Reference": "https://www.oreilly.com/library/view/java-the-complete/9781260440249/"},
+          {"Java 8 in Action": "https://www.manning.com/books/java-8-in-action?"},
+          {"Java Concurrency in Practice": "https://www.amazon.com/Java-Concurrency-Practice-Brian-Goetz/dp/0321349601"},
+          {"Clean Code":"https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"},
+          {"The Pragmatic Programmer":"https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/"},
+          {"Code Complete":"https://en.wikipedia.org/wiki/Code_Complete"}
          ],
-         "bloglink":[
 
+         "bloglink":[
+          {"Blog For Core Java Link Below":""},
+          {"Head First Java": "https://www.oreilly.com/library/view/head-first-java/9781492091646/"},
+          {"Thinking in Java": "https://www.amazon.com/Thinking-Java-4th-Bruce-Eckel/dp/0131872486"},
+          {"Effective Java": "https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/"},
+          {"Core Java for the Impatient": "https://horstmann.com/javaimpatient/"},
+          {"Java: The Complete Reference": "https://www.oreilly.com/library/view/java-the-complete/9781260440249/"},
+          {"Java 8 in Action": "https://www.manning.com/books/java-8-in-action?"},
+          {"Java Concurrency in Practice": "https://www.amazon.com/Java-Concurrency-Practice-Brian-Goetz/dp/0321349601"},
+          {"Clean Code":"https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"},
+          {"The Pragmatic Programmer":"https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/"},
+          {"Code Complete":"https://en.wikipedia.org/wiki/Code_Complete"}
          ]
     },
 
     {
       "id":2,
       "name":"Spring Boot",
+      "weblink":[
+        {"Spring Boot Tutorial Link Below":""},
+        {"Tutorial Point":"https://www.tutorialspoint.com/spring_boot/spring_boot_beans_and_dependency_injection.htm"},
+        {"Spring IO":"https://spring.io/guides/gs/accessing-data-jpa/"},
+        {"Spring Doc":"https://docs.spring.io/spring-framework/reference/integration/rest-clients.html"},
+        {"Javat Point":"https://www.javatpoint.com/spring-boot-architecture"},
+        {"Spring Expression Language":"https://docs.spring.io/spring-framework/reference/core/expressions/evaluation.html"},
+        {"Spring Boot Learn Quest": "https://www.learnquest.com/vendor-training-v20191113.aspx?tp_id=-99&categoryid=1316"},
+        {"Pluralsight": "https://www.pluralsight.com/"},
+        {"Spring Boot in Action": "https://www.manning.com/books/spring-boot-in-action"},
+        {"Spring Boot Tricks": "https://piotrminkowski.com/2021/01/13/spring-boot-tips-tricks-and-techniques/"}
+      ],
+      "videolink":[
+
+      ],
+      "bloglink":[
+
+      ]
+    },
+
+    {
+      "id":3,
+      "name":"Oracle",
+      "weblink":[
+        {"Tutorial Point":"https://www.tutorialspoint.com/spring_boot/spring_boot_beans_and_dependency_injection.htm"},
+        {"Spring IO":"https://spring.io/guides/gs/accessing-data-jpa/"},
+        {"Spring Doc":"https://docs.spring.io/spring-framework/reference/integration/rest-clients.html"},
+        {"Javat Point":"https://www.javatpoint.com/spring-boot-architecture"},
+        {"Spring Expression Language":"https://docs.spring.io/spring-framework/reference/core/expressions/evaluation.html"},
+        {"Spring Boot Learn Quest": "https://www.learnquest.com/vendor-training-v20191113.aspx?tp_id=-99&categoryid=1316"},
+        {"Pluralsight": "https://www.pluralsight.com/"},
+        {"Spring Boot in Action": "https://www.manning.com/books/spring-boot-in-action"},
+        {"Spring Boot Tricks": "https://piotrminkowski.com/2021/01/13/spring-boot-tips-tricks-and-techniques/"}
+      ],
+      "videolink":[
+
+      ],
+      "bloglink":[
+
+      ]
+    },
+
+    {
+      "id":4,
+      "name":"MySQL",
+      "weblink":[
+        {"Tutorial Point":"https://www.tutorialspoint.com/spring_boot/spring_boot_beans_and_dependency_injection.htm"},
+        {"Spring IO":"https://spring.io/guides/gs/accessing-data-jpa/"},
+        {"Spring Doc":"https://docs.spring.io/spring-framework/reference/integration/rest-clients.html"},
+        {"Javat Point":"https://www.javatpoint.com/spring-boot-architecture"},
+        {"Spring Expression Language":"https://docs.spring.io/spring-framework/reference/core/expressions/evaluation.html"},
+        {"Spring Boot Learn Quest": "https://www.learnquest.com/vendor-training-v20191113.aspx?tp_id=-99&categoryid=1316"},
+        {"Pluralsight": "https://www.pluralsight.com/"},
+        {"Spring Boot in Action": "https://www.manning.com/books/spring-boot-in-action"},
+        {"Spring Boot Tricks": "https://piotrminkowski.com/2021/01/13/spring-boot-tips-tricks-and-techniques/"}
+      ],
+      "videolink":[
+
+      ],
+      "bloglink":[
+
+      ]
+    },
+
+    {
+      "id":5,
+      "name":"Apache Spark",
+      "weblink":[
+        {"Tutorial Point":"https://www.tutorialspoint.com/spring_boot/spring_boot_beans_and_dependency_injection.htm"},
+        {"Spring IO":"https://spring.io/guides/gs/accessing-data-jpa/"},
+        {"Spring Doc":"https://docs.spring.io/spring-framework/reference/integration/rest-clients.html"},
+        {"Javat Point":"https://www.javatpoint.com/spring-boot-architecture"},
+        {"Spring Expression Language":"https://docs.spring.io/spring-framework/reference/core/expressions/evaluation.html"},
+        {"Spring Boot Learn Quest": "https://www.learnquest.com/vendor-training-v20191113.aspx?tp_id=-99&categoryid=1316"},
+        {"Pluralsight": "https://www.pluralsight.com/"},
+        {"Spring Boot in Action": "https://www.manning.com/books/spring-boot-in-action"},
+        {"Spring Boot Tricks": "https://piotrminkowski.com/2021/01/13/spring-boot-tips-tricks-and-techniques/"}
+      ],
+      "videolink":[
+
+      ],
+      "bloglink":[
+
+      ]
+    },
+
+    {
+      "id":6,
+      "name":"Apache Fling",
       "weblink":[
         {"Tutorial Point":"https://www.tutorialspoint.com/spring_boot/spring_boot_beans_and_dependency_injection.htm"},
         {"Spring IO":"https://spring.io/guides/gs/accessing-data-jpa/"},
