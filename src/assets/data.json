@@ -154,5 +154,30 @@
       "bloglink":[
 
       ]
+    },
+
+    {
+      "id":7,
+      "name":"OIPA Training",
+      "weblink":[
+        {"Oracle Insurane Policy Administration Document":""},
+        {"OIPA Dowload":"https://www.oracle.com/middleware/technologies/oracle-policy-automation-downloads.html"},
+        {"Spring IO":"https://spring.io/guides/gs/accessing-data-jpa/"},
+        {"Spring Doc":"https://docs.spring.io/spring-framework/reference/integration/rest-clients.html"},
+        {"Javat Point":"https://www.javatpoint.com/spring-boot-architecture"},
+        {"Spring Expression Language":"https://docs.spring.io/spring-framework/reference/core/expressions/evaluation.html"},
+        {"Spring Boot Learn Quest": "https://www.learnquest.com/vendor-training-v20191113.aspx?tp_id=-99&categoryid=1316"},
+        {"Pluralsight": "https://www.pluralsight.com/"},
+        {"Spring Boot in Action": "https://www.manning.com/books/spring-boot-in-action"},
+        {"Spring Boot Tricks": "https://piotrminkowski.com/2021/01/13/spring-boot-tips-tricks-and-techniques/"}
+      ],
+      "videolink":[
+
+      ],
+      "bloglink":[
+
+      ]
     }
+
+    
 ]
