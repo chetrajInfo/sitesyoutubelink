@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<BlogDetails  xmlns="http://www.w3.org/1999/xhtml">
+   <Blog>
+      <id>1</id>
+      <name>Core Java Project-1</name>
+      <link>/assets/corejavapro1.html</link>
+    </Blog>
+
+    <Blog>
+      <id>2</id>
+      <name>Core Java Project-2</name>
+      <link>/assets/corejavepro2.html</link>
+    </Blog>
+
+    <Blog>
+      <id>3</id>
+      <name>Core Java Project-3</name>
+      <link>/assets/corejavapro3.html</link>
+    </Blog>
+
+    <Blog>
+      <id>4</id>
+      <name>Core Java Project-4</name>
+      <link>/assets/corejavapro4.html</link>
+    </Blog>
+
+    <Blog>
+      <id>5</id>
+      <name>Core Java Project-5</name>
+      <link>/assets/corejavapro5.html</link>
+    </Blog>
+
+    <Blog>
+      <id>6</id>
+      <name>Core Java Project-6</name>
+      <link>/assets/corejavapro6.html</link>
+    </Blog>
+</BlogDetails>

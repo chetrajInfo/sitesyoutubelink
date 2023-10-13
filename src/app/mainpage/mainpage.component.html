@@ -6,6 +6,15 @@
     </div> 
 </header>
 
+<div class="about-site">
+  <p> 
+    This website is a great resource for learning about a variety of topics. It provides general information about each topic, as well as links to related websites, video blogs, podcasts, and more. This is a great way to learn about new topics or to get more information about topics that you are already interested in.
+    
+    For example, if you are interested in learning about cooking, you could visit this website and read the general information about cooking. You could then click on the links to related websites to learn about different recipes or cooking techniques. You could also watch the related video blogs to see how to cook different dishes. And if you want to learn more about the history of cooking, you could listen to the related podcasts.</p>
+    
+    <p>This website is a great way to learn about a variety of topics in a fun and engaging way. It is also a great way to discover new resources that you may not have known about before.</p>
+</div>
+
 <div class="container">
     <!--
   <div class="sidebar">
@@ -30,6 +39,8 @@
         </ul>
        </div>
 
+
+  
        <div class="link-container">
         <ul *ngIf="selectedSite">
           <li *ngFor="let linkObj of selectedSite.weblink">
@@ -50,4 +61,25 @@
         </ul>
       </div>
       
+      <div class="link-container">
+        <ul *ngIf="selectedSite">
+          <li *ngFor="let linkObj of selectedSite.bloglink">
+            <a [href]="linkObj[getKey(linkObj)]" target="_blank">
+              {{ getKey(linkObj) }}
+            </a>
+          </li>
+        </ul>
+      </div>
+      
 </div>
+
+<div class="corejava">
+  <h3>Core Java Solved Project For Better Understanding.</h3>
+  <div *ngFor="let blog of blogs" class="corejava-pro">
+    <a [href]="blog.link" target="_blank">
+      <button><img src="./assets/corejava.png" alt="Core Java Image"> {{ blog.name }} </button>
+    </a>
+  </div>
+</div>
+
+
