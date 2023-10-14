@@ -24,7 +24,22 @@ header img {
     min-width: 100px;
     padding: 0.3em;
 }
+.my-fav{
+    font-size: clamp(1em, 2vw, 1.2em);
+    text-decoration: 2px underline rgb(252, 168, 13);
+}
 
+.my-fav a{
+
+    background: -webkit-linear-gradient(#1b1ece, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.my-fav a:hover
+{
+    text-decoration: 2px underline black;
+    
+}
 .about-site {
     max-width: 95vw;
     margin: 0.8em;
@@ -220,4 +235,36 @@ h3 {
         width: 6vw;
 
     }
+}
+
+@media  screen and (max-width:870px) {
+    
+header {
+    flex-direction: column;
+    justify-content: center;
+    column-gap: 0.3em;
+}
+
+.corejava-pro {
+    display: inline-block;
+    margin-left: 1em;
+    padding: auto;
+   
+}
+
+
+.corejava-pro button {
+    margin-top: 10px;
+    padding: auto;
+    width: 15vw;
+    height: 9vh;
+    font-size: 11px;
+}
+
+.corejava-pro button img {
+    height: 3vh;
+    width: 4vw;
+
+}
+
 }

@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+}
+
+.content {
+    height: auto;
+    width: 93vw;
+    box-shadow: 2px 2px 2px 2px gainsboro;
+    margin: 0 0 0.9rem 0.7rem;
+    padding: 1em;
+    font-size: clamp(1.1em, 2vw, 1.3em);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: justify;
+}
+
+h1,
+h3,
+h4 {
+    margin: 0.7rem 0 0 0.7rem;
+}
+
+h4 {
+    padding: 0.6em;
+    background-color: azure;
+    border-radius: 3px;
+    width: 96%;
+    text-align: center;
+}
+
+.steps {
+    font-size: clamp(1.0em, 2vw, 1.2em);
+    padding: 0 1em 1em 1em;
+    text-align: justify;
+}
+
+.steps::before {
+    margin: 0.7rem 0 0 1.2rem;
+    content: "\2022";
+    /* Unicode character for a bullet (•) */
+    color: #333;
+    /* Adjust the color of the bullet */
+    font-size: 1.5em;
+    /* Adjust this value to control the bullet size */
+}
+
+.code-view{
+    margin: 1em 3em 2em 3em;
+}
+
+button{
+    height: 3vh;
+    width: 5vw;
+    float: left;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius:6px;
+    background-color: white;
+}
+.scroll-to-top-button button{
+     border-radius: 50%;
+     background-color: burlywood;
+     width: 3vw;
+     font-weight: bolder;
+     font-size: medium;
+}
+img{
+    height: 2vh;
+    width: 3vw;
+}
+
+@media screen and (max-width:600px) {
+    .content {
+        margin: auto;
+        padding: auto;
+    }
+
+    h4 {
+        width: auto;
+    }
+    .code-view{
+        margin: 1em;
+        font-size: 14px;
+    }
+    button{
+        font-size: 11px;
+    }
+   
+}

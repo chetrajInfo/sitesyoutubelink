@@ -1,11 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Core Java Project-1</title>
+    <link rel="stylesheet" href="../assets/globalstyle.css">
+    <!-- Include Prism.js and the Java language definition for the change code color in Java -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-java.min.js"></script>
+    <script>
+        Prism.highlightAll();
+    </script>
+
 </head>
+
 <body>
-    <h1>This Is Core Java Project 1</h1>
+    <h1>Project Scenario:</h1> <br>
+    <p class="content">
+        You are tasked with creating a simple command-line address book application in Java.
+        The application should allow users to add, view, update, and delete contacts. Each contact should have a name,
+        phone number, and email address. The application should also provide a list of all contacts in the address book.
+    </p>
+
+    <h3> Step-by-Step Explanation and Code:</h3>
+    <h4>Step 1: Set Up the Project </h4>
+    <p class="steps">
+        Create a new Java project in your preferred IDE or text editor. For simplicity, we will create a
+        single Java class called <strong>"AdderesBook"</strong> to manage the address book.
+    </p>
+    <div class="code-view">
+        <pre>
+        <code class="language-java">
+            import java.util.ArrayList;
+            import java.util.List;
+            import java.util.Scanner;
+            
+            public class AddressBook {
+                private List<Contact> contacts = new ArrayList<>();
+                private Scanner scanner = new Scanner(System.in);
+            
+                public static void main(String[] args) {
+                    AddressBook addressBook = new AddressBook();
+                    addressBook.run();
+                }
+            
+                public void run() {
+                    boolean running = true;
+                    while (running) {
+                        System.out.println("Address Book Menu:");
+                        System.out.println("1. Add Contact");
+                        System.out.println("2. View Contacts");
+                        System.out.println("3. Update Contact");
+                        System.out.println("4. Delete Contact");
+                        System.out.println("5. Quit");
+                        System.out.print("Select an option: ");
+            
+                        int choice = scanner.nextInt();
+                        scanner.nextLine(); // Consume newline
+            
+                        switch (choice) {
+                            case 1:
+                                addContact();
+                                break;
+                            case 2:
+                                viewContacts();
+                                break;
+                            case 3:
+                                updateContact();
+                                break;
+                            case 4:
+                                deleteContact();
+                                break;
+                            case 5:
+                                running = false;
+                                break;
+                            default:
+                                System.out.println("Invalid option. Please try again.");
+                        }
+                    }
+                }
+            }
+
+    </code>
+    </pre>
+    </div>
+
+    <h4>
+        Step 2: Create the Contact Class
+    </h4>
+    <p class="steps">
+        Create a Contact class to represent individual contacts in the address book.
+    </p>
+    <div class="code-view">
+        <pre>
+        <code class="language-java">
+            class Contact {
+                private String name;
+                private String phoneNumber;
+                private String email;
+            
+                public Contact(String name, String phoneNumber, String email) {
+                    this.name = name;
+                    this.phoneNumber = phoneNumber;
+                    this.email = email;
+                }
+            
+                public String getName() {
+                    return name;
+                }
+            
+                public String getPhoneNumber() {
+                    return phoneNumber;
+                }
+            
+                public String getEmail() {
+                    return email;
+                }
+            
+                public void setPhoneNumber(String phoneNumber) {
+                    this.phoneNumber = phoneNumber;
+                }
+            
+                public void setEmail(String email) {
+                    this.email = email;
+                }
+            }            
+            
+        </code>
+    </pre>
+    </div>
+
+    <h4>
+        Step 3: Implement Add Contact
+    </h4>
+
+    <p class="steps">
+        Implement the addContact() method to add a new contact to the address book.
+    </p>
+    <div class="code-view">
+        <pre>
+        <code class="language-java">
+            private void addContact() {
+                System.out.print("Enter name: ");
+                String name = scanner.nextLine();
+                System.out.print("Enter phone number: ");
+                String phoneNumber = scanner.nextLine();
+                System.out.print("Enter email: ");
+                String email = scanner.nextLine();
+        
+                Contact contact = new Contact(name, phoneNumber, email);
+                contacts.add(contact);
+        
+                System.out.println("Contact added successfully.");
+            }
+        
+            
+        </code>
+    </pre>
+    </div>
+
+    <h4>
+        Step 4: Implement View Contacts
+    </h4>
+
+    <p class="steps">
+        Implement the viewContacts() method to display all contacts in the address book.
+    </p>
+    <div class="code-view">
+        <pre>
+        <code class="language-java">
+            private void viewContacts() {
+                if (contacts.isEmpty()) {
+                    System.out.println("No contacts found.");
+                } else {
+                    System.out.println("Contacts:");
+                    for (Contact contact : contacts) {
+                        System.out.println(contact.getName() + ", " + contact.getPhoneNumber() + ", " + contact.getEmail());
+                    }
+                }
+            }
+        
+            
+        </code>
+    </pre>
+    </div>
+
+    <h4>
+        Step 5: Implement Update Contact
+    </h4>
+
+    <p class="steps">
+
+        Implement the updateContact() method to update an existing contact.
+    </p>
+    <div class="code-view">
+        <pre>
+        <code class="language-java">
+            private void updateContact() {
+                System.out.print("Enter the name of the contact you want to update: ");
+                String name = scanner.nextLine();
+        
+                for (Contact contact : contacts) {
+                    if (contact.getName().equalsIgnoreCase(name)) {
+                        System.out.print("Enter new phone number: ");
+                        String newPhoneNumber = scanner.nextLine();
+                        System.out.print("Enter new email: ");
+                        String newEmail = scanner.nextLine();
+        
+                        contact.setPhoneNumber(newPhoneNumber);
+                        contact.setEmail(newEmail);
+        
+                        System.out.println("Contact updated successfully.");
+                        return;
+                    }
+                }
+        
+                System.out.println("Contact not found.");
+            }
+        </code>
+    </pre>
+    </div>
+
+    <h4>
+        Step 6: Implement Delete Contact
+    </h4>
+
+    <p class="steps">
+
+        Implement the deleteContact() method to delete an existing contact.
+    </p>
+    <div class="code-view">
+        <pre>
+        <code class="language-java">
+            private void deleteContact() {
+                System.out.print("Enter the name of the contact you want to delete: ");
+                String name = scanner.nextLine();
+        
+                for (Contact contact : contacts) {
+                    if (contact.getName().equalsIgnoreCase(name)) {
+                        contacts.remove(contact);
+                        System.out.println("Contact deleted successfully.");
+                        return;
+                    }
+                }
+        
+                System.out.println("Contact not found.");
+            }          
+        </code>
+    </pre>
+    </div>
+
+    <h4>Here is Full Code Copy and paste Into Your IDE and run the application.</h4>
+    <div class="code-view" id="codeToCopy">
+        <pre>
+            <button id="copyButton"><img src="../assets/copysign.png" alt="Copy"></button>
+            <code class="language-java">
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Contact {
+    private String name;
+    private String phoneNumber;
+    private String email;
+
+    public Contact(String name, String phoneNumber, String email) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+}
+
+public class AddressBook {
+    private List<Contact> contacts = new ArrayList<>();
+    private Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        AddressBook addressBook = new AddressBook();
+        addressBook.run();
+    }
+
+    public void run() {
+        boolean running = true;
+        while (running) {
+            System.out.println("Address Book Menu:");
+            System.out.println("1. Add Contact");
+            System.out.println("2. View Contacts");
+            System.out.println("3. Update Contact");
+            System.out.println("4. Delete Contact");
+            System.out.println("5. Quit");
+            System.out.print("Select an option: ");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+
+            switch (choice) {
+                case 1:
+                    addContact();
+                    break;
+                case 2:
+                    viewContacts();
+                    break;
+                case 3:
+                    updateContact();
+                    break;
+                case 4:
+                    deleteContact();
+                    break;
+                case 5:
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
+        }
+    }
+
+    private void addContact() {
+        System.out.print("Enter name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter phone number: ");
+        String phoneNumber = scanner.nextLine();
+        System.out.print("Enter email: ");
+        String email = scanner.nextLine();
+
+        Contact contact = new Contact(name, phoneNumber, email);
+        contacts.add(contact);
+
+        System.out.println("Contact added successfully.");
+    }
+
+    private void viewContacts() {
+        if (contacts.isEmpty()) {
+            System.out.println("No contacts found.");
+        } else {
+            System.out.println("Contacts:");
+            for (Contact contact : contacts) {
+                System.out.println(contact.getName() + ", " + contact.getPhoneNumber() + ", " + contact.getEmail());
+            }
+        }
+    }
+
+    private void updateContact() {
+        System.out.print("Enter the name of the contact you want to update: ");
+        String name = scanner.nextLine();
+
+        for (Contact contact : contacts) {
+            if (contact.getName().equalsIgnoreCase(name)) {
+                System.out.print("Enter new phone number: ");
+                String newPhoneNumber = scanner.nextLine();
+                System.out.print("Enter new email: ");
+                String newEmail = scanner.nextLine();
+
+                contact.setPhoneNumber(newPhoneNumber);
+                contact.setEmail(newEmail);
+
+                System.out.println("Contact updated successfully.");
+                return;
+            }
+        }
+
+        System.out.println("Contact not found.");
+    }
+
+    private void deleteContact() {
+        System.out.print("Enter the name of the contact you want to delete: ");
+        String name = scanner.nextLine();
+
+        for (Contact contact : contacts) {
+            if (contact.getName().equalsIgnoreCase(name)) {
+                contacts.remove(contact);
+                System.out.println("Contact deleted successfully.");
+                return;
+            }
+        }
+
+        System.out.println("Contact not found.");
+    }
+}
+            </code>
+           
+            
+<div class="scroll-to-top-button">
+    <button id="scrollToTopButton">&#8593;</button>
+</div>
+        </pre>
+
+    </div>
+    <script>
+        document.getElementById('scrollToTopButton').addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.getElementById('copyButton').addEventListener('click', function () {
+            var codeBlock = document.querySelector('#codeToCopy code');
+            var range = document.createRange();
+            range.selectNode(codeBlock);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+
+            try {
+                var successful = document.execCommand('copy');
+                var message = successful ? 'Copied to clipboard!' : 'Copy failed. Please select the code manually and press Ctrl+C.';
+                alert(message);
+            } catch (err) {
+                console.error('Unable to copy to clipboard:', err);
+            }
+
+            window.getSelection().removeAllRanges();
+        });
+    </script>
+
+
 </body>
+
 </html>
