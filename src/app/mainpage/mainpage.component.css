@@ -13,6 +13,15 @@ header {
     margin: 1rem;
     flex-wrap: wrap;
     gap: 1rem;
+    
+}
+nav{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+   padding: 0.5rem;
+   background:rgb(251,245,240);
+   width: 96%;
+   margin-left: 1rem;
 }
 
 /* If you want to make the image adjust its size based on the screen's width, you can use vw, 
@@ -27,13 +36,20 @@ header img {
 .my-fav{
     font-size: clamp(1em, 2vw, 1.2em);
     text-decoration: 2px underline rgb(252, 168, 13);
-}
+    text-align: center; /* Center the content horizontally */
+    margin-right: 10px; /* Add a right margin to create spacing between items */
+  }
+  
+  .my-fav:last-child {
+    margin-right: 0; /* Remove the right margin from the last item to prevent extra spacing */
+  }
 
 .my-fav a{
 
     background: -webkit-linear-gradient(#1b1ece, #333);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: block;
 }
 .my-fav a:hover
 {
@@ -172,6 +188,62 @@ h3 {
 }
 
 
+/* Hamburger menu styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    justify-content: center;
+}
+
+  
+  nav.show-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2em;
+    width: 90%;
+    margin-top:-2.6rem;
+    line-height: 2rem;
+  }
+
+@media screen and (max-width: 600px) {
+    /* Hide the navigation menu by default */
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+      
+    }
+
+    /* Show the hamburger menu icon */
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+@media screen and (min-width:601px) {
+
+    nav.show-menu {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+       padding: 0.5rem;
+       background:rgb(251,245,240);
+       width: 96%;
+       margin-left: 1rem;
+       margin-top:0;
+      }
+    
+}
+
 
 @media screen and (max-width:1450px) {
     .link-container ul li {
@@ -266,5 +338,11 @@ header {
     width: 4vw;
 
 }
+
+nav{
+    margin: auto auto auto 5px;
+    padding: auto;
+}
+
 
 }

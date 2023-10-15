@@ -9,10 +9,11 @@ import { throwError } from 'rxjs';
 export class BlogService {
   constructor(private http: HttpClient) { }
 
+  // this methods is used to fetched adn parse the xml file from assets folder 
   fetchBlogs() {
     return this.http.get('assets/corejavaproject.xml', { responseType: 'text' }).pipe(
       map(response => {
-        console.log('XML Response:', response);
+        //console.log('XML Response:', response); //this console is for testing purpose whether the code is executing properly or not 
   
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(response, 'application/xml');
@@ -25,7 +26,7 @@ export class BlogService {
   
         const blogs: any = [];
         const blogNodes = xmlDoc.querySelectorAll('Blog');
-        console.log('Blog Nodes:', blogNodes);
+        //console.log('Blog Nodes:', blogNodes);
   
         blogNodes.forEach((blogNode: Element) => {
           const idNode = blogNode.querySelector('id');

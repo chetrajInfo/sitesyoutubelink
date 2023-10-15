@@ -4,17 +4,37 @@
     <div>
         <h1><i>Useful Sites and Videos</i></h1>
     </div> 
-
-    <div class="my-fav">
-      <a href="https://www.youtube.com/watch?v=VRpHdSFWGPs" target="_blank">Functional Programming</a>
-    </div>
-    <div  class="my-fav">
-      <a href="https://www.youtube.com/watch?v=GdAon80-0KA&t=1573s" target="_blank">Collections Framework</a>
-    </div>
-    <div>
-      
+    <div>  
     </div>
 </header>
+<!-- the below code is for the hamburger menu -->
+<div class="menu-toggle" (click)="toggleMenu()">
+  <div class="bar" [ngClass]="{'open': isMenuOpen}"></div>
+  <div class="bar" [ngClass]="{'open': isMenuOpen}"></div>
+  <div class="bar" [ngClass]="{'open': isMenuOpen}"></div>
+</div>
+
+
+
+
+<nav [ngClass]="{'show-menu': isMenuOpen, 'hide-menu': !isMenuOpen}">
+  <div class="my-fav">
+    <a href="https://www.youtube.com/watch?v=VRpHdSFWGPs" target="_blank">Functional</a>
+  </div>
+  <div  class="my-fav">
+    <a href="https://www.youtube.com/watch?v=GdAon80-0KA&t=1573s" target="_blank">Collections</a>
+  </div>
+
+  <div class="my-fav">
+    <a href="https://www.youtube.com/watch?v=VRpHdSFWGPs" target="_blank">Networking</a>
+  </div>
+  <div  class="my-fav">
+    <a href="https://www.youtube.com/watch?v=GdAon80-0KA&t=1573s" target="_blank">Package</a>
+  </div>
+  <div  class="my-fav">
+    <a href="https://www.youtube.com/watch?v=GdAon80-0KA&t=1573s" target="_blank">CheatSheet</a>
+  </div>
+</nav>
 
 <div class="about-site">
   <p> 

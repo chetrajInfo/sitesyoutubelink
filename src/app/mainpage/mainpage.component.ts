@@ -9,11 +9,19 @@ import { BlogService } from '../blog.service';
 })
 export class MainpageComponent implements OnInit {
 
+ // from 12 to 17 code is for hamburger menu sign appear when screen reach 600px widht
+  isMenuOpen: boolean = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+     console.log(this.isMenuOpen); // Check the value in the browser's console
+  }
+
   //this is for Json File calling and using into main component html file wihtout using service class
   sites: any[] = [];
   selectedSite: any;
 
-  //this is for xml file calling and parsing using service class
+  //this is for xml file calling and parsing using service class the proeprties of xml files is Blogs
   blogs: any[] = [];
   selectedBlogContent:any;
 
@@ -36,10 +44,12 @@ export class MainpageComponent implements OnInit {
       //this.blogs = data;
       // Automatically select the first blog to display initially
       //this.loadBlogContent(this.blogs[0].link);
-      console.log('Fetched Blogs:', data);
+      
+      //below console is used to see whether data has been fetched or not its for testing purpose
+      //console.log('Fetched Blogs:', data);
       this.blogs = data;
       if (this.blogs && this.blogs.length > 0) {
-          console.log('Loading content for blog:', this.blogs[0]);
+          //console.log('Loading content for blog:', this.blogs[0]); //this is aslo same to see whether the data is loaded or not it is for testing purpose
           this.loadBlogContent(this.blogs[0].link);
       }
     });
