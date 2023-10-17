@@ -33,377 +33,622 @@
         Create a new Java project in your preferred IDE or text editor. 
         We'll create a package called taskmanager and start building the application.
     </p>
+   
+
+
+    <h4>
+        Step 2:Create a TaskStatus Enum
+    </h4>
+    <p class="steps">
+        Create a TaskStatus Enum to represent the final value for status.
+    </p>
     <div class="code-view">
         <pre>
         <code class="language-java">
-            import java.util.ArrayList;
-            import java.util.List;
-            import java.util.Scanner;
             
-            public class AddressBook {
-                private List<Contact> contacts = new ArrayList<>();
-                private Scanner scanner = new Scanner(System.in);
-            
-                public static void main(String[] args) {
-                    AddressBook addressBook = new AddressBook();
-                    addressBook.run();
+                enum TaskStatus {
+                    TO_DO,
+                    IN_PROGRESS,
+                    COMPLETED
                 }
             
-                public void run() {
+        </code>
+    </pre>
+    </div>
+
+    <h4>
+        Step 3: Create a two interface called TaskinIerface and TaskManagerInterface
+
+    </h4>
+
+    <p class="steps">
+        Create a TaskManagerInterface to manage tasks. This interface will contain a list of tasks methods for Title, Status, Description, DueDate.
+        
+    </p>
+    <div class="code-view">
+        <pre>
+        <code class="language-java">
+            interface TaskInterface {
+                String getTitle();
+                TaskStatus getStatus();
+                void setStatus(TaskStatus status);
+                String getDescription();
+                String getDueDate();
+            }
+            
+        </code>
+    </pre>
+    </div>
+
+    <p class="steps">
+        Create a TaskManagerInterface to manage tasks. This interface will contain a list of tasks methods for Title, Status, Description, DueDate.
+        
+    </p>
+    <div class="code-view">
+        <pre>
+        <code class="language-java">
+            interface TaskManagerInterface {
+                void addTask(TaskInterface task);
+                void viewAllTasks();
+                void updateTaskStatus(String title, TaskStatus newStatus);
+                void deleteTask(String title);
+                List filterTasksByStatus(TaskStatus status);
+                List getTasks();
+            }
+            
+        </code>
+    </pre>
+    </div>
+
+
+    <h4>
+        Step 4: Implement TaskInterface to the Abstract Class to 
+    </h4>
+
+    <p class="steps">
+     
+     Create a Abstract class that implement the method declaration of TaskInterface.
+    </p>
+    <div class="code-view">
+        <pre>
+        <code class="language-java">
+            abstract class AbstractTask implements TaskInterface {
+                protected String title;
+                protected String description;
+                protected String dueDate;
+                protected TaskStatus status;
+            
+                public AbstractTask(String title, String description, String dueDate, TaskStatus status) {
+                    this.title = title;
+                    this.description = description;
+                    this.dueDate = dueDate;
+                    this.status = status;
+                }
+            
+                @Override
+                public String getTitle() {
+                    return title;
+                }
+            
+                @Override
+                public TaskStatus getStatus() {
+                    return status;
+                }
+            
+                @Override
+                public void setStatus(TaskStatus status) {
+                    this.status = status;
+                }
+            
+                @Override
+                public String getDescription() {
+                    return description;
+                }
+            
+                @Override
+                public String getDueDate() {
+                    return dueDate;
+                }
+            
+                @Override
+                public String toString() {
+                    return "Title: " + title + "\nDescription: " + description + "\nDue Date: " + dueDate + "\nStatus: " + status + "\n";
+                }
+            }
+        
+            
+        </code>
+    </pre>
+    </div>
+
+    <h4>
+        Step 5: Create Concret Task Class
+    </h4>
+
+    <p class="steps">
+        Create Task class to extends the Abstact class into it. 
+    </p>
+    <div class="code-view">
+        <pre>
+        <code class="language-java">
+            // Create a concrete Task class
+            class Task extends AbstractTask {
+                public Task(String title, String description, String dueDate, TaskStatus status) {
+                    super(title, description, dueDate, status);
+                }
+            }
+            
+        </code>
+    </pre>
+    </div>
+
+    <h4>
+        Step 6: Create TaskManager to Implement TaskManagerInterface
+    </h4>
+
+    <p class="steps">
+
+      TaskManager class will implement all the Abstact method of interface called TaskManagerInterface.
+    </p>
+    <div class="code-view">
+        <pre>
+        <code class="language-java">
+            // Implement the TaskManager
+                class TaskManager implements TaskManagerInterface {
+                    private List tasks = new ArrayList<>();
+                
+                    @Override
+                    public List getTasks() {
+                        return tasks;
+                    }
+                
+                    @Override
+                    public void addTask(TaskInterface task) {
+                        tasks.add(task);
+                    }
+                
+                    @Override
+                    public void viewAllTasks() {
+                        tasks.forEach(System.out::println);
+                    }
+                
+                    @Override
+                    public void updateTaskStatus(String title, TaskStatus newStatus) {
+                        tasks.stream()
+                                .filter(task -> task.getTitle().equalsIgnoreCase(title))
+                                .forEach(task -> task.setStatus(newStatus));
+                    }
+                
+                    @Override
+                    public void deleteTask(String title) {
+                        tasks.removeIf(task -> task.getTitle().equalsIgnoreCase(title));
+                    }
+                
+                    @Override
+                    public List filterTasksByStatus(TaskStatus status) {
+                        return tasks.stream()
+                                .filter(task -> task.getStatus() == status)
+                                .collect(Collectors.toList());
+                    }
+                }  
+        </code>
+    </pre>
+    </div>
+
+    <h4>
+        Step 7: Create Full Fledge TaskManagementApp
+    </h4>
+
+    <p class="steps">
+        TaskManagementApp main class will contain all the functionality of the app that we are desinging.
+    </p>
+    <div class="code-view">
+        <pre>
+        <code class="language-java">
+            public class TaskManagementApp {
+                public static void main(String[] args) {
+                    TaskManagerInterface taskManager = new TaskManager();
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            
                     boolean running = true;
                     while (running) {
-                        System.out.println("Address Book Menu:");
-                        System.out.println("1. Add Contact");
-                        System.out.println("2. View Contacts");
-                        System.out.println("3. Update Contact");
-                        System.out.println("4. Delete Contact");
-                        System.out.println("5. Quit");
-                        System.out.print("Select an option: ");
+                        try {
+                            System.out.println("Task Management Menu:");
+                            System.out.println("1. Add Task");
+                            System.out.println("2. View All Tasks");
+                            System.out.println("3. Update Task Status");
+                            System.out.println("4. Delete Task");
+                            System.out.println("5. Filter Tasks by Status");
+                            System.out.println("6. Quit");
+                            System.out.print("Select an option: ");
             
-                        int choice = scanner.nextInt();
-                        scanner.nextLine(); // Consume newline
+                            int choice;
+                            while (true) {
+                                try {
+                                    // Read the input as a string
+                                    String input = reader.readLine();
             
-                        switch (choice) {
-                            case 1:
-                                addContact();
-                                break;
-                            case 2:
-                                viewContacts();
-                                break;
-                            case 3:
-                                updateContact();
-                                break;
-                            case 4:
-                                deleteContact();
-                                break;
-                            case 5:
-                                running = false;
-                                break;
-                            default:
-                                System.out.println("Invalid option. Please try again.");
+                                    // Check if the input is a valid integer
+                                    if (input.matches("\\d+")) {
+                                        choice = Integer.parseInt(input);
+            
+                                        // Check if the choice is within the valid range (1 to 6)
+                                        if (choice >= 1 && choice <= 6) {
+                                            break; // Valid choice, exit the loop
+                                        } else {
+                                            System.out.println("Invalid option. Please enter a number between 1 and 6.");
+                                        }
+                                    } else {
+                                        System.out.println("Invalid input. Please enter a number between 1 and 6.");
+                                    }
+                                } catch (NumberFormatException e) {
+                                    System.out.println("Invalid input. Please enter a number between 1 and 6.");
+                                }
+                            }
+            
+                            switch (choice) {
+                                case 1:
+                                    System.out.print("Enter Task Title: ");
+                                    String title = reader.readLine();
+                                    System.out.print("Enter Task Description: ");
+                                    String description = reader.readLine();
+                                    System.out.print("Enter Due Date: ");
+                                    String dueDate = reader.readLine();
+                                    TaskStatus status;
+                                    while (true) {
+                                        try {
+                                            System.out.print("Enter Status (TO_DO, IN_PROGRESS, COMPLETED): ");
+                                            status = TaskStatus.valueOf(reader.readLine().toUpperCase());
+                                            break; // Valid status, exit the loop
+                                        } catch (IllegalArgumentException e) {
+                                            System.out.println("Invalid status. Please enter TO_DO, IN_PROGRESS, or COMPLETED.");
+                                        }
+                                    }
+            
+                                    TaskInterface task = new Task(title, description, dueDate, status);
+                                    taskManager.addTask(task);
+                                    System.out.println("Task added successfully.");
+                                    break;
+                                case 2:
+                                    taskManager.viewAllTasks();
+                                    break;
+                                case 3:
+                                    System.out.print("Enter Task Title to Update Status: ");
+                                    String updateTitle = reader.readLine();
+                                    while (true) {
+                                        try {
+                                            System.out.print("Enter New Status (TO_DO, IN_PROGRESS, COMPLETED): ");
+                                            TaskStatus newStatus = TaskStatus.valueOf(reader.readLine().toUpperCase());
+                                            taskManager.updateTaskStatus(updateTitle, newStatus);
+                                            System.out.println("Task status updated successfully.");
+                                            break;
+                                        } catch (IllegalArgumentException e) {
+                                            System.out.println("Invalid status. Please enter TO_DO, IN_PROGRESS, or COMPLETED.");
+                                        }
+                                    }
+                                    break;
+                                case 4:
+                                    System.out.print("Enter Task Title to Delete: ");
+                                    String deleteTitle = reader.readLine();
+            
+                                    // Check if a task with the specified title exists before deleting
+                                    boolean taskFound = false;
+                                    for (TaskInterface enteredTask : taskManager.getTasks()) {
+                                        if (enteredTask.getTitle().equalsIgnoreCase(deleteTitle)) {
+                                            taskFound = true;
+                                            break;
+                                        }
+                                    }
+            
+                                    if (taskFound) {
+                                        taskManager.deleteTask(deleteTitle);
+                                        System.out.println("Task deleted successfully.");
+                                    } else {
+                                        System.out.println("Task not found.");
+                                    }
+                                    break;
+                                case 5:
+                                    System.out.print("Enter Status to Filter (TO_DO, IN_PROGRESS, COMPLETED): ");
+                                    TaskStatus filterStatus;
+                                    while (true) {
+                                        try {
+                                            filterStatus = TaskStatus.valueOf(reader.readLine().toUpperCase());
+                                            break; // Valid status, exit the loop
+                                        } catch (IllegalArgumentException e) {
+                                            System.out.println("Invalid status. Please enter TO_DO, IN_PROGRESS, or COMPLETED.");
+                                        }
+                                    }
+            
+                                    List filteredTasks = taskManager.filterTasksByStatus(filterStatus);
+                                    if (filteredTasks.isEmpty()) {
+                                        System.out.println("No tasks found with the specified status.");
+                                    } else {
+                                        filteredTasks.forEach(System.out::println);
+                                    }
+                                    break;
+                                case 6:
+                                    running = false;
+                                    break;
+                                default:
+                                    System.out.println("Invalid option. Please try again.");
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
                     }
                 }
             }
-
-    </code>
-    </pre>
-    </div>
-
-    <h4>
-        Step 2: Create the Contact Class
-    </h4>
-    <p class="steps">
-        Create a Contact class to represent individual contacts in the address book.
-    </p>
-    <div class="code-view">
-        <pre>
-        <code class="language-java">
-            class Contact {
-                private String name;
-                private String phoneNumber;
-                private String email;
-            
-                public Contact(String name, String phoneNumber, String email) {
-                    this.name = name;
-                    this.phoneNumber = phoneNumber;
-                    this.email = email;
-                }
-            
-                public String getName() {
-                    return name;
-                }
-            
-                public String getPhoneNumber() {
-                    return phoneNumber;
-                }
-            
-                public String getEmail() {
-                    return email;
-                }
-            
-                public void setPhoneNumber(String phoneNumber) {
-                    this.phoneNumber = phoneNumber;
-                }
-            
-                public void setEmail(String email) {
-                    this.email = email;
-                }
-            }            
             
         </code>
     </pre>
     </div>
+    <h4>Here is Full Code Copy and paste Into Your IDE and run the application.
+        In the MainApp class, you can implement code for adding, viewing, updating, and deleting tasks based on user input. Test the application to ensure it works as expected.
 
-    <h4>
-        Step 3: Implement Add Contact
+With these steps and comments, you have a structured Java project for a task management application that incorporates object-oriented programming and functional programming concepts. You can continue to implement the missing functionality in the switch statement in the main method and add more features as needed.
     </h4>
-
-    <p class="steps">
-        Implement the addContact() method to add a new contact to the address book.
-    </p>
-    <div class="code-view">
-        <pre>
-        <code class="language-java">
-            private void addContact() {
-                System.out.print("Enter name: ");
-                String name = scanner.nextLine();
-                System.out.print("Enter phone number: ");
-                String phoneNumber = scanner.nextLine();
-                System.out.print("Enter email: ");
-                String email = scanner.nextLine();
-        
-                Contact contact = new Contact(name, phoneNumber, email);
-                contacts.add(contact);
-        
-                System.out.println("Contact added successfully.");
-            }
-        
-            
-        </code>
-    </pre>
-    </div>
-
-    <h4>
-        Step 4: Implement View Contacts
-    </h4>
-
-    <p class="steps">
-        Implement the viewContacts() method to display all contacts in the address book.
-    </p>
-    <div class="code-view">
-        <pre>
-        <code class="language-java">
-            private void viewContacts() {
-                if (contacts.isEmpty()) {
-                    System.out.println("No contacts found.");
-                } else {
-                    System.out.println("Contacts:");
-                    for (Contact contact : contacts) {
-                        System.out.println(contact.getName() + ", " + contact.getPhoneNumber() + ", " + contact.getEmail());
-                    }
-                }
-            }
-        
-            
-        </code>
-    </pre>
-    </div>
-
-    <h4>
-        Step 5: Implement Update Contact
-    </h4>
-
-    <p class="steps">
-
-        Implement the updateContact() method to update an existing contact.
-    </p>
-    <div class="code-view">
-        <pre>
-        <code class="language-java">
-            private void updateContact() {
-                System.out.print("Enter the name of the contact you want to update: ");
-                String name = scanner.nextLine();
-        
-                for (Contact contact : contacts) {
-                    if (contact.getName().equalsIgnoreCase(name)) {
-                        System.out.print("Enter new phone number: ");
-                        String newPhoneNumber = scanner.nextLine();
-                        System.out.print("Enter new email: ");
-                        String newEmail = scanner.nextLine();
-        
-                        contact.setPhoneNumber(newPhoneNumber);
-                        contact.setEmail(newEmail);
-        
-                        System.out.println("Contact updated successfully.");
-                        return;
-                    }
-                }
-        
-                System.out.println("Contact not found.");
-            }
-        </code>
-    </pre>
-    </div>
-
-    <h4>
-        Step 6: Implement Delete Contact
-    </h4>
-
-    <p class="steps">
-
-        Implement the deleteContact() method to delete an existing contact.
-    </p>
-    <div class="code-view">
-        <pre>
-        <code class="language-java">
-            private void deleteContact() {
-                System.out.print("Enter the name of the contact you want to delete: ");
-                String name = scanner.nextLine();
-        
-                for (Contact contact : contacts) {
-                    if (contact.getName().equalsIgnoreCase(name)) {
-                        contacts.remove(contact);
-                        System.out.println("Contact deleted successfully.");
-                        return;
-                    }
-                }
-        
-                System.out.println("Contact not found.");
-            }          
-        </code>
-    </pre>
-    </div>
-
-    <h4>Here is Full Code Copy and paste Into Your IDE and run the application.</h4>
     <div class="code-view" id="codeToCopy">
         <pre>
             <button id="copyButton"><img src="../assets/copysign.png" alt="Copy"></button>
             <code class="language-java">
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
-class Contact {
-    private String name;
-    private String phoneNumber;
-    private String email;
-
-    public Contact(String name, String phoneNumber, String email) {
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-}
-
-public class AddressBook {
-    private List< Contact> contacts = new ArrayList<>();
-    private Scanner scanner = new Scanner(System.in);
-
-    public static void main(String[] args) {
-        AddressBook addressBook = new AddressBook();
-        addressBook.run();
-    }
-
-    public void run() {
-        boolean running = true;
-        while (running) {
-            System.out.println("Address Book Menu:");
-            System.out.println("1. Add Contact");
-            System.out.println("2. View Contacts");
-            System.out.println("3. Update Contact");
-            System.out.println("4. Delete Contact");
-            System.out.println("5. Quit");
-            System.out.print("Select an option: ");
-
-            int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
-
-            switch (choice) {
-                case 1:
-                    addContact();
-                    break;
-                case 2:
-                    viewContacts();
-                    break;
-                case 3:
-                    updateContact();
-                    break;
-                case 4:
-                    deleteContact();
-                    break;
-                case 5:
-                    running = false;
-                    break;
-                default:
-                    System.out.println("Invalid option. Please try again.");
-            }
-        }
-    }
-
-    private void addContact() {
-        System.out.print("Enter name: ");
-        String name = scanner.nextLine();
-        System.out.print("Enter phone number: ");
-        String phoneNumber = scanner.nextLine();
-        System.out.print("Enter email: ");
-        String email = scanner.nextLine();
-
-        Contact contact = new Contact(name, phoneNumber, email);
-        contacts.add(contact);
-
-        System.out.println("Contact added successfully.");
-    }
-
-    private void viewContacts() {
-        if (contacts.isEmpty()) {
-            System.out.println("No contacts found.");
-        } else {
-            System.out.println("Contacts:");
-            for (Contact contact : contacts) {
-                System.out.println(contact.getName() + ", " + contact.getPhoneNumber() + ", " + contact.getEmail());
-            }
-        }
-    }
-
-    private void updateContact() {
-        System.out.print("Enter the name of the contact you want to update: ");
-        String name = scanner.nextLine();
-
-        for (Contact contact : contacts) {
-            if (contact.getName().equalsIgnoreCase(name)) {
-                System.out.print("Enter new phone number: ");
-                String newPhoneNumber = scanner.nextLine();
-                System.out.print("Enter new email: ");
-                String newEmail = scanner.nextLine();
-
-                contact.setPhoneNumber(newPhoneNumber);
-                contact.setEmail(newEmail);
-
-                System.out.println("Contact updated successfully.");
-                return;
-            }
-        }
-
-        System.out.println("Contact not found.");
-    }
-
-    private void deleteContact() {
-        System.out.print("Enter the name of the contact you want to delete: ");
-        String name = scanner.nextLine();
-
-        for (Contact contact : contacts) {
-            if (contact.getName().equalsIgnoreCase(name)) {
-                contacts.remove(contact);
-                System.out.println("Contact deleted successfully.");
-                return;
-            }
-        }
-
-        System.out.println("Contact not found.");
-    }
-}
+                import java.io.BufferedReader;
+                import java.io.IOException;
+                import java.io.InputStreamReader;
+                import java.util.ArrayList;
+                import java.util.List;
+                import java.util.stream.Collectors;
+                
+                // Define a TaskStatus enum for task statuses
+                enum TaskStatus {
+                    TO_DO,
+                    IN_PROGRESS,
+                    COMPLETED
+                }
+                
+                // Create an interface for tasks
+                interface TaskInterface {
+                    String getTitle();
+                    TaskStatus getStatus();
+                    void setStatus(TaskStatus status);
+                    String getDescription();
+                    String getDueDate();
+                }
+                
+                // Create an abstract class for common task attributes
+                abstract class AbstractTask implements TaskInterface {
+                    protected String title;
+                    protected String description;
+                    protected String dueDate;
+                    protected TaskStatus status;
+                
+                    public AbstractTask(String title, String description, String dueDate, TaskStatus status) {
+                        this.title = title;
+                        this.description = description;
+                        this.dueDate = dueDate;
+                        this.status = status;
+                    }
+                
+                    @Override
+                    public String getTitle() {
+                        return title;
+                    }
+                
+                    @Override
+                    public TaskStatus getStatus() {
+                        return status;
+                    }
+                
+                    @Override
+                    public void setStatus(TaskStatus status) {
+                        this.status = status;
+                    }
+                
+                    @Override
+                    public String getDescription() {
+                        return description;
+                    }
+                
+                    @Override
+                    public String getDueDate() {
+                        return dueDate;
+                    }
+                
+                    @Override
+                    public String toString() {
+                        return "Title: " + title + "\nDescription: " + description + "\nDue Date: " + dueDate + "\nStatus: " + status + "\n";
+                    }
+                }
+                
+                // Create a concrete Task class
+                class Task extends AbstractTask {
+                    public Task(String title, String description, String dueDate, TaskStatus status) {
+                        super(title, description, dueDate, status);
+                    }
+                }
+                
+                // Create a TaskManager interface
+                interface TaskManagerInterface {
+                    void addTask(TaskInterface task);
+                    void viewAllTasks();
+                    void updateTaskStatus(String title, TaskStatus newStatus);
+                    void deleteTask(String title);
+                    List< TaskInterface> filterTasksByStatus(TaskStatus status);
+                    List< TaskInterface> getTasks();
+                }
+                
+                // Implement the TaskManager
+                class TaskManager implements TaskManagerInterface {
+                    private List< TaskInterface> tasks = new ArrayList<>();
+                
+                    @Override
+                    public List< TaskInterface> getTasks() {
+                        return tasks;
+                    }
+                
+                    @Override
+                    public void addTask(TaskInterface task) {
+                        tasks.add(task);
+                    }
+                
+                    @Override
+                    public void viewAllTasks() {
+                        tasks.forEach(System.out::println);
+                    }
+                
+                    @Override
+                    public void updateTaskStatus(String title, TaskStatus newStatus) {
+                        tasks.stream()
+                                .filter(task -> task.getTitle().equalsIgnoreCase(title))
+                                .forEach(task -> task.setStatus(newStatus));
+                    }
+                
+                    @Override
+                    public void deleteTask(String title) {
+                        tasks.removeIf(task -> task.getTitle().equalsIgnoreCase(title));
+                    }
+                
+                    @Override
+                    public List< TaskInterface> filterTasksByStatus(TaskStatus status) {
+                        return tasks.stream()
+                                .filter(task -> task.getStatus() == status)
+                                .collect(Collectors.toList());
+                    }
+                }
+                
+                public class TaskManagementApp {
+                    public static void main(String[] args) {
+                        TaskManagerInterface taskManager = new TaskManager();
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                
+                        boolean running = true;
+                        while (running) {
+                            try {
+                                System.out.println("Task Management Menu:");
+                                System.out.println("1. Add Task");
+                                System.out.println("2. View All Tasks");
+                                System.out.println("3. Update Task Status");
+                                System.out.println("4. Delete Task");
+                                System.out.println("5. Filter Tasks by Status");
+                                System.out.println("6. Quit");
+                                System.out.print("Select an option: ");
+                
+                                int choice;
+                                while (true) {
+                                    try {
+                                        // Read the input as a string
+                                        String input = reader.readLine();
+                
+                                        // Check if the input is a valid integer
+                                        if (input.matches("\\d+")) {
+                                            choice = Integer.parseInt(input);
+                
+                                            // Check if the choice is within the valid range (1 to 6)
+                                            if (choice >= 1 && choice <= 6) {
+                                                break; // Valid choice, exit the loop
+                                            } else {
+                                                System.out.println("Invalid option. Please enter a number between 1 and 6.");
+                                            }
+                                        } else {
+                                            System.out.println("Invalid input. Please enter a number between 1 and 6.");
+                                        }
+                                    } catch (NumberFormatException e) {
+                                        System.out.println("Invalid input. Please enter a number between 1 and 6.");
+                                    }
+                                }
+                
+                                switch (choice) {
+                                    case 1:
+                                        System.out.print("Enter Task Title: ");
+                                        String title = reader.readLine();
+                                        System.out.print("Enter Task Description: ");
+                                        String description = reader.readLine();
+                                        System.out.print("Enter Due Date: ");
+                                        String dueDate = reader.readLine();
+                                        TaskStatus status;
+                                        while (true) {
+                                            try {
+                                                System.out.print("Enter Status (TO_DO, IN_PROGRESS, COMPLETED): ");
+                                                status = TaskStatus.valueOf(reader.readLine().toUpperCase());
+                                                break; // Valid status, exit the loop
+                                            } catch (IllegalArgumentException e) {
+                                                System.out.println("Invalid status. Please enter TO_DO, IN_PROGRESS, or COMPLETED.");
+                                            }
+                                        }
+                
+                                        TaskInterface task = new Task(title, description, dueDate, status);
+                                        taskManager.addTask(task);
+                                        System.out.println("Task added successfully.");
+                                        break;
+                                    case 2:
+                                        taskManager.viewAllTasks();
+                                        break;
+                                    case 3:
+                                        System.out.print("Enter Task Title to Update Status: ");
+                                        String updateTitle = reader.readLine();
+                                        while (true) {
+                                            try {
+                                                System.out.print("Enter New Status (TO_DO, IN_PROGRESS, COMPLETED): ");
+                                                TaskStatus newStatus = TaskStatus.valueOf(reader.readLine().toUpperCase());
+                                                taskManager.updateTaskStatus(updateTitle, newStatus);
+                                                System.out.println("Task status updated successfully.");
+                                                break;
+                                            } catch (IllegalArgumentException e) {
+                                                System.out.println("Invalid status. Please enter TO_DO, IN_PROGRESS, or COMPLETED.");
+                                            }
+                                        }
+                                        break;
+                                    case 4:
+                                        System.out.print("Enter Task Title to Delete: ");
+                                        String deleteTitle = reader.readLine();
+                
+                                        // Check if a task with the specified title exists before deleting
+                                        boolean taskFound = false;
+                                        for (TaskInterface enteredTask : taskManager.getTasks()) {
+                                            if (enteredTask.getTitle().equalsIgnoreCase(deleteTitle)) {
+                                                taskFound = true;
+                                                break;
+                                            }
+                                        }
+                
+                                        if (taskFound) {
+                                            taskManager.deleteTask(deleteTitle);
+                                            System.out.println("Task deleted successfully.");
+                                        } else {
+                                            System.out.println("Task not found.");
+                                        }
+                                        break;
+                                    case 5:
+                                        System.out.print("Enter Status to Filter (TO_DO, IN_PROGRESS, COMPLETED): ");
+                                        TaskStatus filterStatus;
+                                        while (true) {
+                                            try {
+                                                filterStatus = TaskStatus.valueOf(reader.readLine().toUpperCase());
+                                                break; // Valid status, exit the loop
+                                            } catch (IllegalArgumentException e) {
+                                                System.out.println("Invalid status. Please enter TO_DO, IN_PROGRESS, or COMPLETED.");
+                                            }
+                                        }
+                
+                                        List< TaskInterface> filteredTasks = taskManager.filterTasksByStatus(filterStatus);
+                                        if (filteredTasks.isEmpty()) {
+                                            System.out.println("No tasks found with the specified status.");
+                                        } else {
+                                            filteredTasks.forEach(System.out::println);
+                                        }
+                                        break;
+                                    case 6:
+                                        running = false;
+                                        break;
+                                    default:
+                                        System.out.println("Invalid option. Please try again.");
+                                }
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }
+                
             </code>
            
             

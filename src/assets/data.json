@@ -50,21 +50,42 @@
       "name":"Spring Boot",
       "weblink":[
         {"Spring Boot Tutorial Link Below":""},
-        {"Tutorial Point":"https://www.tutorialspoint.com/spring_boot/spring_boot_beans_and_dependency_injection.htm"},
-        {"Spring IO":"https://spring.io/guides/gs/accessing-data-jpa/"},
-        {"Spring Doc":"https://docs.spring.io/spring-framework/reference/integration/rest-clients.html"},
-        {"Javat Point":"https://www.javatpoint.com/spring-boot-architecture"},
-        {"Spring Expression Language":"https://docs.spring.io/spring-framework/reference/core/expressions/evaluation.html"},
-        {"Spring Boot Learn Quest": "https://www.learnquest.com/vendor-training-v20191113.aspx?tp_id=-99&categoryid=1316"},
-        {"Pluralsight": "https://www.pluralsight.com/"},
-        {"Spring Boot in Action": "https://www.manning.com/books/spring-boot-in-action"},
-        {"Spring Boot Tricks": "https://piotrminkowski.com/2021/01/13/spring-boot-tips-tricks-and-techniques/"}
+        {"Spring Boot Documentation":"https://spring.io/projects/spring-boot"},
+        {"Tutorail Point":"https://www.tutorialspoint.com/spring_boot/spring_boot_introduction.htm"},
+        {"Geeks For Geeks":"https://www.geeksforgeeks.org/spring-boot/"},
+        {"Javat Point":"https://www.javatpoint.com/spring-boot-tutorial"},
+        {"Java Spring Boot Guides":"https://www.javaguides.net/p/spring-boot-tutorial.html"},
+        {"Java Dev Journal": "https://www.javadevjournal.com/spring-boot/"},
+        {"Java In Use": "https://www.javainuse.com/spring/sprboot"},
+        {"Spring Boot Baeldung": "https://www.baeldung.com/spring-boot-start"},
+        {"Jet Brains": "https://www.jetbrains.com/help/idea/your-first-spring-application.html#add-home-page"},
+        {"Jet Brains": "https://www.jetbrains.com/help/idea/your-first-spring-application.html#add-home-page"}
       ],
       "videolink":[
-
+        {"Spring Boot Tutorial Video Link Below":""},
+        {"Coding With John": "https://www.youtube.com/@CodingWithJohn/videos"},
+        {"Bro Code For Java": "https://www.youtube.com/watch?v=xk4_1vDrzzo&t=42417s"},
+        {"Effective Java Tulesko": "https://www.youtube.com/watch?v=BGTx91t8q50&pp=ygUZRnVsbCBDb3Vyc2UgSmF2YSB0dXRvcmlhbA%3D%3D"},
+        {"Free Code Camp": "https://www.youtube.com/watch?v=A74TOX803D0&pp=ygUZRnVsbCBDb3Vyc2UgSmF2YSB0dXRvcmlhbA%3D%3D"},
+        {"Amigo Code Complete Java": "https://www.youtube.com/watch?v=Qgl81fPcLc8&pp=ygUZRnVsbCBDb3Vyc2UgSmF2YSB0dXRvcmlhbA%3D%3D"},
+        {"Simple Learn": "https://www.youtube.com/watch?v=eULw4O2aE-s&pp=ygUZRnVsbCBDb3Vyc2UgSmF2YSB0dXRvcmlhbA%3D%3D"},
+        {"Programming Knowdlege": "https://www.youtube.com/playlist?list=PLS1QulWo1RIbfTjQvTdj8Y6yyq4R7g-Al"},
+        {"Caleb Curry":"https://www.youtube.com/watch?v=r3GGV2TG_vw&pp=ygUZRnVsbCBDb3Vyc2UgSmF2YSB0dXRvcmlhbA%3D%3D"},
+        {"For My Scholars":"https://www.youtube.com/watch?v=2qWPpgALJyw&pp=ygUZRnVsbCBDb3Vyc2UgSmF2YSB0dXRvcmlhbA%3D%3D"},
+        {"Geek's Lesson":"https://www.youtube.com/watch?v=S0V20PHPR4M"}
       ],
       "bloglink":[
-
+        {"Blog For Spring Boot Link Below":""},
+        {"Java Code Geeks": "https://www.javacodegeeks.com/core-java-cheatsheet.html"},
+        {"Baeldung Expert Java": "https://www.baeldung.com/java-tutorial"},
+        {"Oracle Documentation": "https://docs.oracle.com/javase/tutorial/"},
+        {"Core Java With Mkyong": "https://mkyong.com/tutorials/java-8-tutorials/"},
+        {"Java Re Visited": "https://javarevisited.blogspot.com/search/label/core%20java?max-results=3#axzz8G3fmraL8"},
+        {"Vogella In Action": "https://www.vogella.com/tutorials/java.html"},
+        {"Info World Java": "https://www.infoworld.com/category/java/"},
+        {"Java67 Discussion":"https://www.java67.com/"},
+        {"Jenkov Java Tutorial":"https://jenkov.com/"},
+        {"DZone Java Zone":"https://dzone.com/java"}
       ]
     },
 
