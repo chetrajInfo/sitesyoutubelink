@@ -59,33 +59,33 @@
         {"Java In Use": "https://www.javainuse.com/spring/sprboot"},
         {"Spring Boot Baeldung": "https://www.baeldung.com/spring-boot-start"},
         {"Jet Brains": "https://www.jetbrains.com/help/idea/your-first-spring-application.html#add-home-page"},
-        {"Jet Brains": "https://www.jetbrains.com/help/idea/your-first-spring-application.html#add-home-page"}
+        {"Spring Boot Tutorial": "https://www.springboottutorial.com/spring-boot-projects-with-code-examples"}
       ],
       "videolink":[
         {"Spring Boot Tutorial Video Link Below":""},
-        {"Coding With John": "https://www.youtube.com/@CodingWithJohn/videos"},
-        {"Bro Code For Java": "https://www.youtube.com/watch?v=xk4_1vDrzzo&t=42417s"},
-        {"Effective Java Tulesko": "https://www.youtube.com/watch?v=BGTx91t8q50&pp=ygUZRnVsbCBDb3Vyc2UgSmF2YSB0dXRvcmlhbA%3D%3D"},
-        {"Free Code Camp": "https://www.youtube.com/watch?v=A74TOX803D0&pp=ygUZRnVsbCBDb3Vyc2UgSmF2YSB0dXRvcmlhbA%3D%3D"},
-        {"Amigo Code Complete Java": "https://www.youtube.com/watch?v=Qgl81fPcLc8&pp=ygUZRnVsbCBDb3Vyc2UgSmF2YSB0dXRvcmlhbA%3D%3D"},
-        {"Simple Learn": "https://www.youtube.com/watch?v=eULw4O2aE-s&pp=ygUZRnVsbCBDb3Vyc2UgSmF2YSB0dXRvcmlhbA%3D%3D"},
-        {"Programming Knowdlege": "https://www.youtube.com/playlist?list=PLS1QulWo1RIbfTjQvTdj8Y6yyq4R7g-Al"},
-        {"Caleb Curry":"https://www.youtube.com/watch?v=r3GGV2TG_vw&pp=ygUZRnVsbCBDb3Vyc2UgSmF2YSB0dXRvcmlhbA%3D%3D"},
-        {"For My Scholars":"https://www.youtube.com/watch?v=2qWPpgALJyw&pp=ygUZRnVsbCBDb3Vyc2UgSmF2YSB0dXRvcmlhbA%3D%3D"},
-        {"Geek's Lesson":"https://www.youtube.com/watch?v=S0V20PHPR4M"}
+        {"Java Brains": "https://www.youtube.com/watch?v=msXL2oDexqw&list=PLqq-6Pq4lTTbx8p2oCgcAQGQyqN8XeA1x"},
+        {"Amigo Code Spring Boot": "https://www.youtube.com/watch?v=9SGDpanrc8U"},
+        {"Programming Techie": "https://www.youtube.com/watch?v=mPPhcU7oWDU"},
+        {"Daily Code Buffer": "https://www.youtube.com/watch?v=zvR-Oif_nxg"},
+        {"Java Guides": "https://www.youtube.com/watch?v=VR1zoNomG3w"},
+        {"Tulesko Spring Boot": "https://www.youtube.com/watch?v=35EQXmHKZYs"},
+        {"Spring Boot Restful Java Guides": "https://youtu.be/th3uIP7D8nk?si=_HQwT3Wwd92VbAio"},
+        {"Free Code Camp Org":"https://youtu.be/vtPkZShrvXQ?si=8LGMJi0n8IEvRhs6"},
+        {"Spring Boot Quick Start Java Brains":"https://www.youtube.com/watch?v=msXL2oDexqw&list=RDQMHLG6wUVtIVU&start_radio=1"},
+        {"Edureka Spring Boot Full Course":"https://www.youtube.com/watch?v=UfOxcrxhC0s&pp=ygUXc3ByaW5nIGJvb3QgYXBwbGljYXRpb24%3D"}
       ],
       "bloglink":[
         {"Blog For Spring Boot Link Below":""},
-        {"Java Code Geeks": "https://www.javacodegeeks.com/core-java-cheatsheet.html"},
-        {"Baeldung Expert Java": "https://www.baeldung.com/java-tutorial"},
-        {"Oracle Documentation": "https://docs.oracle.com/javase/tutorial/"},
-        {"Core Java With Mkyong": "https://mkyong.com/tutorials/java-8-tutorials/"},
-        {"Java Re Visited": "https://javarevisited.blogspot.com/search/label/core%20java?max-results=3#axzz8G3fmraL8"},
-        {"Vogella In Action": "https://www.vogella.com/tutorials/java.html"},
-        {"Info World Java": "https://www.infoworld.com/category/java/"},
-        {"Java67 Discussion":"https://www.java67.com/"},
-        {"Jenkov Java Tutorial":"https://jenkov.com/"},
-        {"DZone Java Zone":"https://dzone.com/java"}
+        {"Spring IO Blog": " https://spring.io/blog/"},
+        {"How to do in Java": "https://howtodoinjava.com/series/spring-boot/"},
+        {"Daily Code Buffer": "https://www.dailycodebuffer.com/category/spring-boot/"},
+        {"Reflectoring In-depth Article": "https://reflectoring.io/categories/spring-boot/"},
+        {"Java Code Geeks": "https://www.javacodegeeks.com/category/java/enterprise-java"},
+        {"Dzone Framework Article": "https://dzone.com/frameworks"},
+        {"InfoQ Java News": "https://www.infoq.com/java/news/"},
+        {"A Developer Diary":"https://www.adeveloperdiary.com/category/java/spring-boot/"},
+        {"Calli Coder":"https://www.callicoder.com/categories/spring-boot/"},
+        {"Java 2 Blogs":"https://java2blog.com/spring-boot-tutorial/"}
       ]
     },
 
@@ -93,15 +93,17 @@
       "id":3,
       "name":"Oracle",
       "weblink":[
-        {"Tutorial Point":"https://www.tutorialspoint.com/spring_boot/spring_boot_beans_and_dependency_injection.htm"},
-        {"Spring IO":"https://spring.io/guides/gs/accessing-data-jpa/"},
-        {"Spring Doc":"https://docs.spring.io/spring-framework/reference/integration/rest-clients.html"},
-        {"Javat Point":"https://www.javatpoint.com/spring-boot-architecture"},
-        {"Spring Expression Language":"https://docs.spring.io/spring-framework/reference/core/expressions/evaluation.html"},
-        {"Spring Boot Learn Quest": "https://www.learnquest.com/vendor-training-v20191113.aspx?tp_id=-99&categoryid=1316"},
-        {"Pluralsight": "https://www.pluralsight.com/"},
-        {"Spring Boot in Action": "https://www.manning.com/books/spring-boot-in-action"},
-        {"Spring Boot Tricks": "https://piotrminkowski.com/2021/01/13/spring-boot-tips-tricks-and-techniques/"}
+        {"Oracle PL/SQL Tutorial Link Below":""},
+        {"Oracle Base":"https://oracle-base.com/"},
+        {"Oracle Tutorial":"https://www.oracletutorial.com/"},
+        {"Javat Point Oracle Tutorial":"https://www.javatpoint.com/oracle-tutorial"},
+        {"PL SQL Training":"https://www.plsqltutorial.com/"},
+        {"Tech On The Net":"https://www.techonthenet.com/oracle/"},
+        {"Educba Oracle Training": "https://www.educba.com/data-science/data-science-tutorials/oracle-tutorial/"},
+        {"Oracle Online DBA": "https://www.oracle-dba-online.com/sql/oracle_sql_tutorial.htm"},
+        {"Tutorials Points PL/SQL": "https://www.tutorialspoint.com/plsql/index.htm"},
+        {"Guru 99 Oracle Training": "https://www.guru99.com/pl-sql-tutorials.html"},
+        {"Oracle Web Folder": "https://www.oracle.com/webfolder/technetwork/tutorials/obe/db/12c/r1/odb_quickstart/odb_quick_start.html"}
       ],
       "videolink":[
 
