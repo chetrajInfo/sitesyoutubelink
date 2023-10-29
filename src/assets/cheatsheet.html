@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Websites Links</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add a meta description to provide a brief summary of your page. -->
+    <meta name="description" content="One Solution for Programming with books, websites, blogs, and videos">
+
+    <!-- Add relevant keywords to help search engines understand your content. -->
+    <meta name="keywords"
+        content="Programming Links, Relational Database, Spring and Spring Boot, Core Java and JavaEE">
+
+    <!-- Robots Meta Tag: Allow search engine indexing -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="One Solution - Be Programmer Faster">
+    <meta property="og:description"
+        content="Explore a world of programming tips, resources, and more at One Solution. Your one-stop destination for programming with books, websites, blogs, and videos.">
+    <meta property="og:image" content="./assets/webyoutubelink.jpg">
+    <meta property="og:url" content="https://onesolution.web.app/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="One Solution - Be Programmer Faster">
+    <meta name="twitter:description"
+        content="Explore a world of programming tips, resources, and more at One Solution. Your one-stop destination for programming with books, websites, blogs, and videos.">
+    <meta name="twitter:image" content="./assets/webyoutubelink.jpg">
+
+
+    <!-- Canonical Tag: Specify the preferred URL -->
+    <link rel="canonical" href="https://onesolution.web.app/">
+
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <!-- Add structured data to describe your content (e.g., for a blog post). -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "url": "https://onesolution.web.app/",
+      "datePublished": "2023-10-12T00:00:00Z",
+      "headline": "Be Programmer Faster",
+      "author": {
+        "@type": "Person",
+        "name": "Chet Raj Bhandari"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "One Solution",
+        "url": "https://onesolution.web.app/",
+        "logo": "./assets/webyoutubelink.jpg" // You can provide a URL to your website's logo here.
+      },
+      "description": "One Solution is your one-stop destination for a diverse range of content. We've gathered a world of information, from programming tips to culinary delights, and everything in between. Explore a treasure trove of knowledge, all in one place, making your daily life easier and more enjoyable."
+    }
+  </script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: content-box;
+        }
+
+        .jav-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 2rem;
+            align-items: center;
+            margin: 1em;
+        }
+
+        ul li {
+            list-style: none;
+            box-shadow: 1px 2px 2px 2px silver;
+            padding: 0.3rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .jav-box li {
+            color: black;
+            /* default color for the entire line */
+        }
+
+        .method {
+            color: green;
+            /* green color for the method name */
+        }
+
+        h3 {
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+        }
+        #searchInput {
+            margin: 3px 10px 10px 10px;
+            padding:8px 40px 8px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            position: fixed;
+        }
+        #searchInput::after {
+    content: attr(data-count);
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+}
+        .input-container {
+    position: relative;
+    display: inline-block;
+}
+
+.match-counter {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7); /* Light background to ensure text is readable */
+    border-radius: 3px;
+    padding: 0 5px;
+    display: none; /* Initially hidden */
+}
+
+
+
+
+        @media screen and (max-width:600px) {
+
+            .jav-box {
+                margin: auto;
+                width: 100%;
+                flex-direction: column;
+            }
+        }
+    </style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const listItems = document.querySelectorAll('.jav-box li');
+    const searchInput = document.getElementById('searchInput');
+
+    // Modify list items to have a span around the method name
+    listItems.forEach(item => {
+        const text = item.textContent;
+        const methodName = text.split('(')[0];
+        const params = text.split('(')[1];
+        item.innerHTML = `<span class="method">${methodName}</span>(${params}`;
+    });
+
+    // Code for highlighting and counting
+    searchInput.addEventListener('input', function() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        let matchCount = 0;
+
+        listItems.forEach(item => {
+            const methodNameElement = item.querySelector('.method');
+            const methodName = methodNameElement.textContent.toLowerCase();
+
+            if (searchTerm && methodName.startsWith(searchTerm)) {
+                methodNameElement.style.backgroundColor = 'yellow';
+                matchCount++;
+            } else {
+                methodNameElement.style.backgroundColor = 'transparent';
+            }
+        });
+
+        if(searchTerm) { 
+            searchInput.setAttribute('data-count', `${matchCount}`);
+        } else {
+            searchInput.removeAttribute('data-count');
+        }
+    });
+});
+
+
+    </script>
+</head>
+
+<body>
+    <div class="input-container">
+        <input type="text" id="searchInput" placeholder="Type a method name...">
+        <span id="matchCount" class="match-counter"></span>
+    </div>
+    
+
+    <h2 style="padding:2.3rem 0 0 1rem;">Core Java</h2>
+    <h3>String Class</h3>
+    <div class="jav-box">
+       
+        <ul>
+            <li>charAt(int index)</li>
+            <pre>
+        <code>
+        public void showCharacter(){
+            String x ="Hello";
+            System.out.println(x.charAt(1));
+            //output: e
+        }
+            </code>
+        </pre>
+            <li>codePointAt(int index)</li>
+            <pre>
+            <code>
+        public void showCodePoint(){
+            String str ="Hello";
+            int index = 4;
+            int codePoint = str.codePointAt(index);
+            System.out.println(x.charAt(index));
+            System.out.println(codePoint)
+            //output: o,  codePoint is 111
+        }
+                </code>
+            </pre>
+            <li>codePointCount(int beginIndex, int endIndex)</li>
+            <pre>
+                <code>
+        public void checkEmojiCodePointCount() {
+            String str = "Hello, 😀🚀🌕!";
+            int bIndex = 7;
+            int eIndex = 10;
+                
+            int codePointCount = str.codePointCount(bIndex,eIndex);
+                
+            System.out.println(str.substring(bIndex, eIndex));
+            System.out.println(codePointCount);
+            //Substring: 😀🚀
+            //Code point count between index 7 and 10: 2
+            
+        }
+                </code>
+                </pre>
+                
+            <li>compareTo(String anotherString)</li>
+        <pre>
+            <code>
+        public void compareStrings() {
+            String str1 = "Apple";
+            String str2 = "Applet";
+                
+            int result = str1.compareTo(str2);
+                
+            if (result < 0) {
+                System.out.println(str1 + " comes before " + str2);
+            } else if (result > 0) {
+                System.out.println(str1 + " comes after " + str2);
+            } else {
+                System.out.println(str1 + " is equal to " + str2);
+                }
+
+            //Apple comes before Applet
+            //The formula in such a case is:
+            //length of str1 − length of str2
+            
+            //For "Apple" and "Applet":
+            //5 − 6= −1
+        }
+                
+            </code>
+        </pre>
+            <li>compareToIgnoreCase(String str)</li>
+    <pre>
+        <code>
+        public class LibrarySystem {
+            private List<String> bookTitles;
+            
+            // Constructor to initialize the list of book titles
+            public LibrarySystem() {
+                bookTitles = new ArrayList<>();
+                bookTitles.add("To Kill a Mockingbird");
+                bookTitles.add("1984");
+                bookTitles.add("The Great Gatsby");
+                 
+            }
+            
+            public boolean isBookAvailable(String userQuery) {
+                for (String title : bookTitles) {
+                    if (title.compareToIgnoreCase(userQuery) == 0) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            
+            public static void main(String[] args) {
+                LibrarySystem library = new LibrarySystem();
+            
+                // Simulate a user search
+                String userSearch = "tO kILL A mOCKINGBIRD";
+            
+                if (library.isBookAvailable(userSearch)) {
+                    System.out.println("Book " + userSearch + " available!");
+                } else {
+                    System.out.println("Book " + userSearch + "not available.");
+                }
+            }
+            output:The book 'tO kILL A mOCKINGBIRD' is available!
+
+        }
+            
+        </code>
+    </pre>
+            <li>concat(String str)</li>
+    <pre>
+        <code>
+        public class EcommerceSystem {
+            // This is a simple example, so we're just simulating a product purchase.
+                
+            public String generateConfirmationMessage(String productName) {
+                String baseMessage = "Thank you for purchasing ";
+                return baseMessage.concat(productName).concat(".");
+            }
+            
+            public static void main(String[] args) {
+                EcommerceSystem ecommerce = new EcommerceSystem();
+            
+                // Simulate a user purchasing a product
+                String purchasedProduct = "Wireless Headphones";
+            
+                String confirmationMessage = ecommerce.generateConfirmationMessage(purchasedProduct);
+                System.out.println(confirmationMessage);
+            }
+            //output:Thank you for purchasing Wireless Headphones.
+
+        }
+            
+        </code>
+    </pre>
+            <li>contains(CharSequence sequence)</li>
+            <li>contentEquals(CharSequence cs)</li>
+            <li>contentEquals(StringBuffer sb)</li>
+            <li>copyValueOf(char[] data)</li>
+            <li>copyValueOf(char[] data, int offset, int count)</li>
+            <li>endsWith(String suffix)</li>
+            <li>equals(Object anObject)</li>
+            <li>equalsIgnoreCase(String anotherString)</li>
+            <li>format(String format, Object... args)</li>
+            <li>getBytes()</li>
+            <li>getBytes(Charset charset)</li>
+            <li>getBytes(String charsetName)</li>
+        </ul>
+
+        <ul>
+            <li>getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)</li>
+            <pre>
+                <code>
+                public void showCharacter(){
+                    String x ="Hello";
+                    System.out.println(x.charAt(1));
+                    //output: e
+                }
+                    </code>
+                </pre>
+            <li>hashCode()</li>
+            <li>indent(int n)</li>
+            <li>indexOf(int ch)</li>
+            <li>indexOf(int ch, int fromIndex)</li>
+            <li>indexOf(String str)</li>
+            <li>indexOf(String str, int fromIndex)</li>
+            <li>intern()</li>
+            <li>isEmpty()</li>
+            <li>join(CharSequence delimiter, CharSequence... elements)</li>
+            <li>join(CharSequence delimiter, Iterable
+                <? extends CharSequence> elements)</li>
+        <li>lastIndexOf(int ch)</li>
+        <li>lastIndexOf(int ch, int fromIndex)</li>
+        <li>lastIndexOf(String str)</li>
+        <li>lastIndexOf(String str, int fromIndex)</li>
+        <li>length()</li>
+        <li>lines()</li>
+        <li>matches(String regex)</li>
+        <li>offsetByCodePoints(int index, int codePointOffset)</li>
+        </ul>
+
+        <ul>
+            <li>toString()</li>
+            <li>toUpperCase()</li>
+            <li>toUpperCase(Locale locale)</li>
+            <li>trim()</li>
+            <li>copyValueOf(char[] data)</li>
+            <li>copyValueOf(char[] data, int offset, int count)</li>
+            <li>format(Locale l, String format, Object... args)</li>
+            <li>format(String format, Object... args)</li>
+            <li>join(CharSequence delimiter, CharSequence... elements)</li>
+            <li>join(CharSequence delimiter, Iterable<? extends CharSequence> elements)</li>
+            <li>valueOf(Object obj)</li>
+            <li>valueOf(int i)</li>
+            <li>valueOf(long l)</li>
+            <li>valueOf(float f)</li>
+            <li>valueOf(double d)</li>
+            <li>valueOf(char[] data)</li>
+            <li>valueOf(char c)</li>
+            <li>valueOf(boolean b)</li>
+            <li>strip()</li>
+        </ul>
+
+        <ul>
+        <li>regionMatches(boolean ignoreCase, int toffset, String other, int ooffset, int len)</li>
+        <li>regionMatches(int toffset, String other, int ooffset, int len)</li>
+        <li>repeat(int count)</li>
+        <li>replace(char oldChar, char newChar)</li>
+        <li>replace(CharSequence target, CharSequence replacement)</li>
+        <li>replaceAll(String regex, String replacement)</li>
+        <li>replaceFirst(String regex, String replacement)</li>
+        <li>split(String regex)</li>
+        <li>split(String regex, int limit)</li>
+        <li>startsWith(String prefix)</li>
+        <li>startsWith(String prefix, int toffset)</li>
+
+        <li>stripLeading()</li>
+        <li>stripTrailing()</li>
+        <li>substring(int beginIndex)</li>
+        <li>substring(int beginIndex, int endIndex)</li>
+        <li>toCharArray()</li>
+        <li>toLowerCase()</li>
+        <li>toLowerCase(Locale locale)</li>
+        </ul>
+
+
+    
+</div>
+
+<hr>
+<h3>Arrays Methods</h3>
+<div class="jav-box">
+   
+        <ul>
+            <li>sort(byte[] a)</li>
+            <li>sort(byte[] a, int fromIndex, int toIndex)</li>
+            <li>parallelSort(byte[] a)</li>
+            <li>parallelSort(byte[] a, int fromIndex, int toIndex)</li>
+            <li>binarySearch(byte[] a, byte key)</li>
+            <li>binarySearch(byte[] a, int fromIndex, int toIndex, byte key)</li>
+            <li>equals(byte[] a, byte[] a2)</li>
+            <li>deepEquals(Object[] a1, Object[] a2)</li>
+            </ul>
+            <ul>
+            <li>fill(byte[] a, byte val)</li>
+            <li>fill(byte[] a, int fromIndex, int toIndex, byte val)</li>
+            <li>copyOf(byte[] original, int newLength)</li>
+            <li>copyOfRange(byte[] original, int from, int to)</li>
+            <li>asList(T... a)</li>
+            <li>toString(byte[] a)</li>
+            <li>deepToString(Object[] a)</li>
+            <li>hashCode(byte[] a)</li>
+            </ul>
+            <ul>
+            <li>deepHashCode(Object[] a)</li>
+            <li>setAll(T[] array, IntFunction<? extends T> generator)</li>
+            <li>parallelSetAll(T[] array, IntFunction<? extends T> generator)</li>
+            <li>spliterator(T[] array)</li>
+            <li>stream(T[] array)</li>
+            <li>stream(T[] array, int startInclusive, int endExclusive)</li>
+            <li>parallelPrefix(int[] array, IntBinaryOperator op)</li>
+            <li>mismatch(byte[] a, byte[] a2)</li>
+        </ul>
+        
+
+</div>
+</body>
+</html>
