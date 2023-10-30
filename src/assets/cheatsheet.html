@@ -97,37 +97,43 @@
             font-weight: bold;
             font-style: italic;
         }
+
         #searchInput {
             margin: 3px 10px 10px 10px;
-            padding:8px 40px 8px 8px;
+            padding: 8px 40px 8px 8px;
             border-radius: 4px;
             border: 1px solid #ccc;
             position: fixed;
         }
-        #searchInput::after {
-    content: attr(data-count);
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #999;
-    pointer-events: none;
-}
-        .input-container {
-    position: relative;
-    display: inline-block;
-}
 
-.match-counter {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.7); /* Light background to ensure text is readable */
-    border-radius: 3px;
-    padding: 0 5px;
-    display: none; /* Initially hidden */
-}
+        #searchInput::after {
+            content: attr(data-count);
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            pointer-events: none;
+        }
+
+        .input-container {
+            position: relative;
+            display: inline-block;
+            margin-left: 75rem;
+        }
+
+        .match-counter {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            /* Light background to ensure text is readable */
+            border-radius: 3px;
+            padding: 0 5px;
+            display: none;
+            /* Initially hidden */
+        }
 
 
 
@@ -141,43 +147,43 @@
             }
         }
     </style>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const listItems = document.querySelectorAll('.jav-box li');
-    const searchInput = document.getElementById('searchInput');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const listItems = document.querySelectorAll('.jav-box li');
+            const searchInput = document.getElementById('searchInput');
 
-    // Modify list items to have a span around the method name
-    listItems.forEach(item => {
-        const text = item.textContent;
-        const methodName = text.split('(')[0];
-        const params = text.split('(')[1];
-        item.innerHTML = `<span class="method">${methodName}</span>(${params}`;
-    });
+            // Modify list items to have a span around the method name
+            listItems.forEach(item => {
+                const text = item.textContent;
+                const methodName = text.split('(')[0];
+                const params = text.split('(')[1];
+                item.innerHTML = `<span class="method">${methodName}</span>(${params}`;
+            });
 
-    // Code for highlighting and counting
-    searchInput.addEventListener('input', function() {
-        const searchTerm = searchInput.value.trim().toLowerCase();
-        let matchCount = 0;
+            // Code for highlighting and counting
+            searchInput.addEventListener('input', function () {
+                const searchTerm = searchInput.value.trim().toLowerCase();
+                let matchCount = 0;
 
-        listItems.forEach(item => {
-            const methodNameElement = item.querySelector('.method');
-            const methodName = methodNameElement.textContent.toLowerCase();
+                listItems.forEach(item => {
+                    const methodNameElement = item.querySelector('.method');
+                    const methodName = methodNameElement.textContent.toLowerCase();
 
-            if (searchTerm && methodName.startsWith(searchTerm)) {
-                methodNameElement.style.backgroundColor = 'yellow';
-                matchCount++;
-            } else {
-                methodNameElement.style.backgroundColor = 'transparent';
-            }
+                    if (searchTerm && methodName.startsWith(searchTerm)) {
+                        methodNameElement.style.backgroundColor = 'yellow';
+                        matchCount++;
+                    } else {
+                        methodNameElement.style.backgroundColor = 'transparent';
+                    }
+                });
+
+                if (searchTerm) {
+                    searchInput.setAttribute('data-count', `${matchCount}`);
+                } else {
+                    searchInput.removeAttribute('data-count');
+                }
+            });
         });
-
-        if(searchTerm) { 
-            searchInput.setAttribute('data-count', `${matchCount}`);
-        } else {
-            searchInput.removeAttribute('data-count');
-        }
-    });
-});
 
 
     </script>
@@ -192,274 +198,1306 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <h2 style="padding:2.3rem 0 0 1rem;">Core Java</h2>
     <h3>String Class</h3>
-    <div class="jav-box">
-       
-        <ul>
-            <li>charAt(int index)</li>
-            <pre>
-        <code>
-        public void showCharacter(){
-            String x ="Hello";
-            System.out.println(x.charAt(1));
-            //output: e
-        }
-            </code>
-        </pre>
-            <li>codePointAt(int index)</li>
-            <pre>
-            <code>
-        public void showCodePoint(){
-            String str ="Hello";
-            int index = 4;
-            int codePoint = str.codePointAt(index);
-            System.out.println(x.charAt(index));
-            System.out.println(codePoint)
-            //output: o,  codePoint is 111
-        }
-                </code>
-            </pre>
-            <li>codePointCount(int beginIndex, int endIndex)</li>
-            <pre>
-                <code>
-        public void checkEmojiCodePointCount() {
-            String str = "Hello, 😀🚀🌕!";
-            int bIndex = 7;
-            int eIndex = 10;
-                
-            int codePointCount = str.codePointCount(bIndex,eIndex);
-                
-            System.out.println(str.substring(bIndex, eIndex));
-            System.out.println(codePointCount);
-            //Substring: 😀🚀
-            //Code point count between index 7 and 10: 2
-            
-        }
-                </code>
-                </pre>
-                
-            <li>compareTo(String anotherString)</li>
-        <pre>
-            <code>
-        public void compareStrings() {
-            String str1 = "Apple";
-            String str2 = "Applet";
-                
-            int result = str1.compareTo(str2);
-                
-            if (result < 0) {
-                System.out.println(str1 + " comes before " + str2);
-            } else if (result > 0) {
-                System.out.println(str1 + " comes after " + str2);
-            } else {
-                System.out.println(str1 + " is equal to " + str2);
-                }
+<div class="jav-box">
 
-            //Apple comes before Applet
-            //The formula in such a case is:
-            //length of str1 − length of str2
-            
-            //For "Apple" and "Applet":
-            //5 − 6= −1
-        }
-                
-            </code>
-        </pre>
-            <li>compareToIgnoreCase(String str)</li>
-    <pre>
-        <code>
-        public class LibrarySystem {
-            private List<String> bookTitles;
-            
-            // Constructor to initialize the list of book titles
-            public LibrarySystem() {
-                bookTitles = new ArrayList<>();
-                bookTitles.add("To Kill a Mockingbird");
-                bookTitles.add("1984");
-                bookTitles.add("The Great Gatsby");
-                 
-            }
-            
-            public boolean isBookAvailable(String userQuery) {
-                for (String title : bookTitles) {
-                    if (title.compareToIgnoreCase(userQuery) == 0) {
-                        return true;
-                    }
-                }
-                return false;
-            }
-            
-            public static void main(String[] args) {
-                LibrarySystem library = new LibrarySystem();
-            
-                // Simulate a user search
-                String userSearch = "tO kILL A mOCKINGBIRD";
-            
-                if (library.isBookAvailable(userSearch)) {
-                    System.out.println("Book " + userSearch + " available!");
-                } else {
-                    System.out.println("Book " + userSearch + "not available.");
-                }
-            }
-            output:The book 'tO kILL A mOCKINGBIRD' is available!
-
-        }
-            
-        </code>
-    </pre>
-            <li>concat(String str)</li>
-    <pre>
-        <code>
-        public class EcommerceSystem {
-            // This is a simple example, so we're just simulating a product purchase.
-                
-            public String generateConfirmationMessage(String productName) {
-                String baseMessage = "Thank you for purchasing ";
-                return baseMessage.concat(productName).concat(".");
-            }
-            
-            public static void main(String[] args) {
-                EcommerceSystem ecommerce = new EcommerceSystem();
-            
-                // Simulate a user purchasing a product
-                String purchasedProduct = "Wireless Headphones";
-            
-                String confirmationMessage = ecommerce.generateConfirmationMessage(purchasedProduct);
-                System.out.println(confirmationMessage);
-            }
-            //output:Thank you for purchasing Wireless Headphones.
-
-        }
-            
-        </code>
-    </pre>
-            <li>contains(CharSequence sequence)</li>
-            <li>contentEquals(CharSequence cs)</li>
-            <li>contentEquals(StringBuffer sb)</li>
-            <li>copyValueOf(char[] data)</li>
-            <li>copyValueOf(char[] data, int offset, int count)</li>
-            <li>endsWith(String suffix)</li>
-            <li>equals(Object anObject)</li>
-            <li>equalsIgnoreCase(String anotherString)</li>
-            <li>format(String format, Object... args)</li>
-            <li>getBytes()</li>
-            <li>getBytes(Charset charset)</li>
-            <li>getBytes(String charsetName)</li>
-        </ul>
-
-        <ul>
-            <li>getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)</li>
-            <pre>
-                <code>
-                public void showCharacter(){
-                    String x ="Hello";
-                    System.out.println(x.charAt(1));
-                    //output: e
-                }
-                    </code>
-                </pre>
-            <li>hashCode()</li>
-            <li>indent(int n)</li>
-            <li>indexOf(int ch)</li>
-            <li>indexOf(int ch, int fromIndex)</li>
-            <li>indexOf(String str)</li>
-            <li>indexOf(String str, int fromIndex)</li>
-            <li>intern()</li>
-            <li>isEmpty()</li>
-            <li>join(CharSequence delimiter, CharSequence... elements)</li>
-            <li>join(CharSequence delimiter, Iterable
-                <? extends CharSequence> elements)</li>
-        <li>lastIndexOf(int ch)</li>
-        <li>lastIndexOf(int ch, int fromIndex)</li>
-        <li>lastIndexOf(String str)</li>
-        <li>lastIndexOf(String str, int fromIndex)</li>
-        <li>length()</li>
-        <li>lines()</li>
-        <li>matches(String regex)</li>
-        <li>offsetByCodePoints(int index, int codePointOffset)</li>
-        </ul>
-
-        <ul>
-            <li>toString()</li>
-            <li>toUpperCase()</li>
-            <li>toUpperCase(Locale locale)</li>
-            <li>trim()</li>
-            <li>copyValueOf(char[] data)</li>
-            <li>copyValueOf(char[] data, int offset, int count)</li>
-            <li>format(Locale l, String format, Object... args)</li>
-            <li>format(String format, Object... args)</li>
-            <li>join(CharSequence delimiter, CharSequence... elements)</li>
-            <li>join(CharSequence delimiter, Iterable<? extends CharSequence> elements)</li>
-            <li>valueOf(Object obj)</li>
-            <li>valueOf(int i)</li>
-            <li>valueOf(long l)</li>
-            <li>valueOf(float f)</li>
-            <li>valueOf(double d)</li>
-            <li>valueOf(char[] data)</li>
-            <li>valueOf(char c)</li>
-            <li>valueOf(boolean b)</li>
-            <li>strip()</li>
-        </ul>
-
-        <ul>
-        <li>regionMatches(boolean ignoreCase, int toffset, String other, int ooffset, int len)</li>
-        <li>regionMatches(int toffset, String other, int ooffset, int len)</li>
-        <li>repeat(int count)</li>
-        <li>replace(char oldChar, char newChar)</li>
-        <li>replace(CharSequence target, CharSequence replacement)</li>
-        <li>replaceAll(String regex, String replacement)</li>
-        <li>replaceFirst(String regex, String replacement)</li>
-        <li>split(String regex)</li>
-        <li>split(String regex, int limit)</li>
-        <li>startsWith(String prefix)</li>
-        <li>startsWith(String prefix, int toffset)</li>
-
-        <li>stripLeading()</li>
-        <li>stripTrailing()</li>
-        <li>substring(int beginIndex)</li>
-        <li>substring(int beginIndex, int endIndex)</li>
-        <li>toCharArray()</li>
-        <li>toLowerCase()</li>
-        <li>toLowerCase(Locale locale)</li>
-        </ul>
+<ul>
+<li>charAt(int index)</li>
+<pre>
+<code>
+public void showCharacter(){
+String x ="Hello";
+System.out.println(x.charAt(1));
+//output: e
+}
+</code>
+</pre>
+<li>codePointAt(int index)</li>
+<pre>
+<code>
+public void showCodePoint(){
+String str ="Hello";
+int index = 4;
+int codePoint = str.codePointAt(index);
+System.out.println(x.charAt(index));
+System.out.println(codePoint)
+//output: o,  codePoint is 111
+}
+</code>
+</pre>
 
 
+<li>compareTo(String anotherString)</li>
+<pre>
+<code>
+public void compareStrings() {
+String str1 = "Apple";
+String str2 = "Applet";
+
+int result = str1.compareTo(str2);
+
+if (result < 0) {
+System.out.println(str1 + " comes before " + str2);
+} else if (result > 0) {
+System.out.println(str1 + " comes after " + str2);
+} else {
+System.out.println(str1 + " is equal to " + str2);
+}
+
+//Apple comes before Applet
+//The formula in such a case is:
+//length of str1 − length of str2
+
+//For "Apple" and "Applet":
+//5 − 6= −1
+}
+
+</code>
+</pre>
+<li>compareToIgnoreCase(String str)</li>
+<pre>
+<code>
+public class LibrarySystem {
+private List<String> bookTitles;
+
+// Constructor to initialize the list of book titles
+public LibrarySystem() {
+bookTitles = new ArrayList<>();
+bookTitles.add("To Kill a Mockingbird");
+bookTitles.add("1984");
+bookTitles.add("The Great Gatsby");
     
+}
+
+public boolean isBookAvailable(String userQuery) {
+for (String title : bookTitles) {
+    if (title.compareToIgnoreCase(userQuery) == 0) {
+        return true;
+    }
+}
+return false;
+}
+
+public static void main(String[] args) {
+LibrarySystem library = new LibrarySystem();
+
+// Simulate a user search
+String userSearch = "tO kILL A mOCKINGBIRD";
+
+if (library.isBookAvailable(userSearch)) {
+    System.out.println("Book " + userSearch + " available!");
+} else {
+    System.out.println("Book " + userSearch + "not available.");
+}
+}
+output:The book 'tO kILL A mOCKINGBIRD' is available!
+
+}
+
+</code>
+</pre>
+<li>concat(String str)</li>
+<pre>
+<code>
+public class EcommerceSystem {
+// This is a simple example, so we're just simulating a product purchase.
+
+public String generateConfirmationMessage(String productName) {
+String baseMessage = "Thank you for purchasing ";
+return baseMessage.concat(productName).concat(".");
+}
+
+public static void main(String[] args) {
+EcommerceSystem ecommerce = new EcommerceSystem();
+
+// Simulate a user purchasing a product
+String purchasedProduct = "Wireless Headphones";
+
+String confirmationMessage = ecommerce.generateConfirmationMessage(purchasedProduct);
+System.out.println(confirmationMessage);
+}
+//output:Thank you for purchasing Wireless Headphones.
+
+}
+
+</code>
+</pre>
+<li>contains(CharSequence sequence)</li>
+<pre>
+<code>
+public class SocialMediaModerationSystem {
+
+public boolean containsEmail(String postContent) {
+// This is a simple check.Email validation would be more comprehensive.
+return postContent.contains("@domain.com");
+}
+    
+public static void main(String[] args) {
+SocialMediaModerationSystem moderation = new SocialMediaModerationSystem();
+    
+// Simulate a user creating a post
+String userPost = "Hey everyone! Contact me at john.doe@domain.com for more information.";
+    
+if (moderation.containsEmail(userPost)) {
+    System.out.println("Warning:Post contains an email might violate our privacy policy.");
+} else {
+    System.out.println("Post looks good!");
+}
+}
+//output: Warning:Post contains an email might violate our privacy policy.
+}
+    
+</code>
+</pre>
+<li>contentEquals(CharSequence cs)</li>
+
+<pre>
+<code>
+public class LoginSystem {
+
+// Simulate a stored password as a StringBuilder (for demonstration purposes)
+private StringBuilder storedPassword = new StringBuilder("securePassword123");
+    
+public boolean isValidPassword(String enteredPassword) {
+return enteredPassword.contentEquals(storedPassword);
+}
+    
+public static void main(String[] args) {
+LoginSystem login = new LoginSystem();
+    
+// Simulate a user entering a password
+String userEnteredPassword = "securePassword123";
+    
+if (login.isValidPassword(userEnteredPassword)) {
+    System.out.println("Login successful!");
+} else {
+    System.out.println("Invalid password. Please try again.");
+}
+}
+
+//output: Login successful!
+
+}
+    
+</code>
+</pre>
+
+<li>copyValueOf(char[] data)</li>
+<pre>
+<code>
+public class BarcodeScanner {
+
+public String processBarcodeScan(char[] scannedData) {
+return String.copyValueOf(scannedData);
+}
+    
+public static void main(String[] args) {
+BarcodeScanner scanner = new BarcodeScanner();
+    
+// Simulate scanned data from a barcode scanner
+char[] barcodeData = {'9', '7', '8', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    
+String barcodeString = scanner.processBarcodeScan(barcodeData);
+    System.out.println("Scanned Barcode: " + barcodeString);
+}
+
+//output: Scanned Barcode: 9780123456789
+
+}
+    
+</code>
+</pre>
+<li>copyValueOf(char[] data, int offset, int count)</li>
+<pre>
+<code>
+    public class BarcodeScanner {
+
+    public String processPartialBarcodeScan(char[] scannedData, int offset, int count) {
+    return String.copyValueOf(scannedData, offset, count);
+    }
+
+    public static void main(String[] args) {
+    BarcodeScanner scanner = new BarcodeScanner();
+
+    // Simulate scanned data from a barcode scanner
+    char[] barcodeData = {'X', 'X', '9', '7', '8', '0', '1', '2', 'X', 'X'};
+
+    // Let's extract the barcode data starting from index 2 and taking 6 characters
+    String barcodeString = scanner.processPartialBarcodeScan(barcodeData, 2, 6);
+    System.out.println("Scanned Barcode: " + barcodeString);
+    }
+    //output: Scanned Barcode: 978012
+
+    }
+</code>
+</pre>
+
+<li>endsWith(String suffix)</li>
+<pre>
+<code>
+public class DocumentManager {
+
+    public boolean isPDF(String fileName) {
+        return fileName.endsWith(".pdf");
+    }
+
+    public static void main(String[] args) {
+        DocumentManager manager = new DocumentManager();
+
+        String[] files = {
+            "document1.docx",
+            "presentation.ppt",
+            "report.pdf",
+            "notes.txt",
+            "guide.pdf"
+        };
+
+        for (String file : files) {
+            if (manager.isPDF(file)) {
+                System.out.println(file + " is a PDF file.");
+            }
+        }
+    }
+//output;report.pdf is a PDF file.
+//guide.pdf is a PDF file.
+
+}
+
+</code>
+</pre>
+            <li>equals(Object anObject)</li>
+            <pre>
+                <code>
+import java.util.Objects;
+
+public class Contact {
+    private String name;
+    private String email;
+
+    public Contact(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    // Override the equals method to determine equality based on the email field.
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Contact contact = (Contact) obj;
+        return Objects.equals(email, contact.email);
+    }
+
+    // hashCode method should also be overridden when equals is overridden.
+    @Override
+    public int hashCode() {
+        return Objects.hash(email);
+    }
+
+    public static void main(String[] args) {
+        Contact aliceContact = new Contact("Alice", "alice@example.com");
+        Contact bobContact = new Contact("Bob", "bob@example.com");
+        Contact anotherAliceContact = new Contact("Alice B.", "alice@example.com");
+
+        // Should print "Duplicate contact found!" because the emails are the same.
+        if (aliceContact.equals(anotherAliceContact)) {
+            System.out.println("Duplicate contact found!");
+        }
+
+        // Should not print anything because the emails are different.
+        if (aliceContact.equals(bobContact)) {
+            System.out.println("This won't be printed because the contacts are different.");
+        }
+    }
+}
+Note:In this script, equals is overridden in the Contact class to ensure that two Contact<br>
+objects are considered equal if their emails are the same. The hashCode method is also overridden<br>
+because it's good practice to override hashCode when equals is overridden to maintain the contract<br>
+between these two methods, which is essential for certain collections like HashSet or HashMap to <br>
+operate correctly.
+</code>
+</pre>
+<li>equalsIgnoreCase(String anotherString)</li>
+<pre>
+<code>
+public class EmailClient {
+
+    private String registeredEmail = "user@example.com";
+
+    public boolean isEmailRegistered(String emailToCheck) {
+        return registeredEmail.equalsIgnoreCase(emailToCheck);
+    }
+
+    public static void main(String[] args) {
+        EmailClient client = new EmailClient();
+
+        // Testing with different case variations of the registered email.
+        String[] emailsToCheck = {
+            "User@example.com",
+            "USER@example.com",
+            "user@EXAMPLE.COM",
+            "user@example.coM",
+            "otheruser@example.com"
+        };
+
+        for (String email : emailsToCheck) {
+            if (client.isEmailRegistered(email)) {
+                System.out.println(email + " is already registered.");
+            } else {
+                System.out.println(email + " is not registered.");
+            }
+        }
+    }
+
+}
+/*
+User@example.com is already registered.
+USER@example.com is already registered.
+user@EXAMPLE.COM is already registered.
+user@example.coM is already registered.
+otheruser@example.com is not registered.
+
+*/
+
+</code>
+</pre>
+
+<li>format(String format, Object... args)</li>
+<pre>
+<code>
+public class ReceiptGenerator {
+
+    public static void main(String[] args) {
+        String productName = "Wireless Mouse";
+        int quantity = 3;
+        double unitPrice = 29.99;
+
+        double totalPrice = quantity * unitPrice;
+        
+        String receipt = String.format(
+            "Receipt:%n" +               // %n denotes platform-specific line separator
+            "Product: %s%n" +
+            "Quantity: %d%n" +
+            "Unit Price: $%.2f%n" +     // %.2f formats double with two decimal places
+            "Total: $%.2f%n",
+            productName, quantity, unitPrice, totalPrice
+        );
+        
+        System.out.println(receipt);
+    }
+}
+/*
+Receipt:
+Product: Wireless Mouse
+Quantity: 3
+Unit Price: $29.99
+Total: $89.97
+
+/*
+</code>
+</pre>
+
+<li>getBytes(String charsetName)</li>
+<pre>
+<code>
+import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
+
+public class NetworkApp {
+
+public static void main(String[] args) {
+    String message = "Hello, World!";
+
+    try {
+        byte[] messageBytes = message.getBytes("UTF-8");
+        System.out.println("Encoded message in UTF-8: " + Arrays.toString(messageBytes));
+
+        //sending these bytes over a network and then receiving them on the other side...
+        // The receiving side will need to decode these bytes back into a 
+        //string using the same charset ("UTF-8").
+
+        String receivedMessage = new String(messageBytes, "UTF-8");
+        System.out.println("Decoded message: " + receivedMessage);
+
+    } catch (UnsupportedEncodingException e) {
+        e.printStackTrace();
+    }
+  }
+}
+/*
+Encoded message in UTF-8: [72, 101, 108, 108, 111, 44, 32, 87, 111, 114, 108, 100, 33]
+Decoded message: Hello, World!
+
+*/
+</code>
+</pre>
+</ul>
+
+<!-- Started another column for String class-->
+<ul>
+<li>getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)</li>
+<pre>
+<code>
+public class TextProcessor {
+
+    public static void main(String[] args) {
+        String document = "The quick brown fox jumps over the lazy dog.";
+
+        // We want to extract the phrase "brown fox" from the document.
+        int start = document.indexOf("brown");   // finds the start index of "brown"
+        int end = start + "brown fox".length();  // calculates the end index
+
+        char[] buffer = new char[end - start];
+
+        document.getChars(start, end, buffer, 0); // copying "brown fox" into buffer
+
+        System.out.println("Extracted phrase: " + new String(buffer));
+    }
+}
+//output:Extracted phrase: brown fox
+</code>
+</pre>
+<li>hashCode()</li>
+<pre>
+<code>
+import java.util.Objects;
+
+public class Book {
+    private String title;
+    private String author;
+    
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Book book = (Book) obj;
+        return Objects.equals(title, book.title) && 
+               Objects.equals(author, book.author);
+    }
+    
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author);
+    }
+
+    public static void main(String[] args) {
+        Book book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald");
+        Book book2 = new Book("The Great Gatsby", "F. Scott Fitzgerald");
+
+        System.out.println("Book1 equals Book2: " + book1.equals(book2));
+        System.out.println("Book1 hashCode: " + book1.hashCode());
+        System.out.println("Book2 hashCode: " + book2.hashCode());
+    }
+}
+/*
+Book1 equals Book2: true
+Book1 hashCode: Some Integer Value (this will vary)
+Book2 hashCode: Same Integer Value as Book1
+
+*/
+</code>
+</pre>
+<li>indent(int n)</li>
+<pre>
+<code>
+public class CodeEditor {
+
+    public static void main(String[] args) {
+        String codeSnippet = """
+                public static void main(String[] args) {
+                System.out.println("Hello, World!");
+                }
+                """;
+
+        System.out.println("Original Code:");
+        System.out.println(codeSnippet);
+
+        String indentedCode = codeSnippet.indent(4);
+        System.out.println("\nIndented Code by 4 spaces:");
+        System.out.println(indentedCode);
+
+        String unIndentedCode = indentedCode.indent(-2);
+        System.out.println("\nUn-indented Code by 2 spaces:");
+        System.out.println(unIndentedCode);
+    }
+}
+    
+</code>
+</pre>
+
+<li>indexOf(int ch)</li>
+<pre>
+<code>
+public class MarkdownParser {
+
+    public static void main(String[] args) {
+        String markdownText = "# Welcome to my blog";
+
+        int position = markdownText.indexOf('#');
+
+        if (position == 0) {
+            System.out.println("This line starts with a header tag.");
+        } else {
+            System.out.println("This line does not start with a header tag.");
+        }
+    }
+}
+//output: This line starts with a header tag.
+   
+</code>
+</pre>
+
+<li>indexOf(String str, int fromIndex)</li>
+<pre>
+<code>
+public class TextEditor {
+
+    public static int findNext(String document, String searchTerm, int startIndex) {
+        return document.indexOf(searchTerm, startIndex);
+    }
+
+    public static void main(String[] args) {
+        String document = "Java is a versatile language. Java is also object-oriented.";
+
+        String searchTerm = "Java";
+        int startIndex = 0;
+        
+        while (true) {
+            int position = findNext(document, searchTerm, startIndex);
+            
+            if (position != -1) {
+                System.out.println("Found '" + searchTerm + "' at index: " + position);
+                startIndex = position + 1;  // Move to the character after the found occurrence.
+            } else {
+                break;  // Exit the loop if no more occurrences are found.
+            }
+        }
+    }
+}
+/*
+Found 'Java' at index: 0
+Found 'Java' at index: 28
+
+*/  
+</code>
+</pre>
+
+<li>intern()</li>
+<pre>
+<code>
+public class StringInternExample {
+
+    public static void main(String[] args) {
+        // Two strings created in a way they don't refer to the same memory initially.
+        String str1 = new String("Hello");
+        String str2 = new String("Hello");
+
+        System.out.println(str1 == str2);  // Outputs: false
+
+        // Interning the strings
+        str1 = str1.intern();
+        str2 = str2.intern();
+
+        System.out.println(str1 == str2);  // Outputs: true
+    }
+}
+/*
+1> Initially, str1 and str2 point to different memory locations. 
+So, the comparison str1 == str2 returns false.
+2> After interning both strings using intern(),
+they both point to the same memory location in the string pool.
+Thus, the comparison str1 == str2 returns true.
+*/   
+</code>
+</pre>
+
+<li>isEmpty()</li>
+<pre>
+<code>
+public class RegistrationForm {
+
+    public static void main(String[] args) {
+        // Example: User did not enter a username.
+        String username = "";
+        String password = "userPassword123";  // Let's assume the user entered a password.
+
+        if (username.isEmpty()) {
+            System.out.println("Username is a required field.");
+        }
+
+        if (password.isEmpty()) {
+            System.out.println("Password is a required field.");
+        }
+
+    }
+}
+//output: Username is a required field.
+</code>
+</pre>
+<li>join(CharSequence delimiter, CharSequence... elements)</li>
+<pre>
+<code>
+public class Logger {
+
+    public static void logEvent(CharSequence... eventDetails) {
+        String logEntry = String.join(", ", eventDetails);
+        System.out.println(logEntry);  // In a real scenario, you might write this to a log file.
+    }
+
+    public static void main(String[] args) {
+        logEvent("2023-10-28 10:00:00", "INFO", "User logged in", "UserID: 12345");
+    }
+}
+//2023-10-28 10:00:00, INFO, User logged in, UserID: 12345
+   
+</code>
+</pre>
+
+<li>join(CharSequence delimiter, Iterable< ? extends CharSequence> elements)</li>
+<pre>
+<code>
+import java.util.Arrays;
+import java.util.List;
+
+public class MusicPlaylist {
+
+    public static void main(String[] args) {
+        List<String> songs = Arrays.asList("Shape of You", "Thinking Out Loud", "Photograph");
+        
+        String playlistSummary = String.join("; ", songs);
+        
+        System.out.println("Playlist: " + playlistSummary);
+    }
+}
+//output: Playlist: Shape of You; Thinking Out Loud; Photograph
+
+</code>
+</pre>
+
+<li>lastIndexOf(int ch)</li>
+<pre>
+<code>
+public class FileUtility {
+
+    public static String getFileExtension(String filename) {
+        int lastDotPosition = filename.lastIndexOf('.');
+        
+        if (lastDotPosition != -1 && lastDotPosition < filename.length() - 1) {
+            return filename.substring(lastDotPosition + 1);
+        }
+        
+        return null;  // No valid extension found
+    }
+
+    public static void main(String[] args) {
+        String f1 = "document.txt";
+        String f2 = "archive.tar.gz";
+        
+        System.out.println("File extension of '" + f1 + "' is: " + getFileExtension(f1));
+        System.out.println("File extension of '" + f2 + "' is: " + getFileExtension(f2));
+    }
+}
+//File extension of 'document.txt' is: txt
+//File extension of 'archive.tar.gz' is: gz
+
+</code>
+</pre>
+<li>lastIndexOf(int ch, int fromIndex)</li>
+<pre>
+<code>
+public class DomainUtility {
+
+    public static String getMainDomain(String fullDomain) {
+        int lastDotPosition = fullDomain.lastIndexOf('.');
+        
+        if (lastDotPosition > 0) {
+            int secondLastDotPosition = fullDomain.lastIndexOf('.', lastDotPosition - 1);
+            
+            if (secondLastDotPosition != -1 && secondLastDotPosition < lastDotPosition - 1) {
+                return fullDomain.substring(secondLastDotPosition + 1, lastDotPosition);
+            }
+        }
+        
+        return null;  // No valid main domain found
+    }
+
+    public static void main(String[] args) {
+        String domain1 = "mail.google.com";
+        String domain2 = "archive.sub.domain.com";
+        
+        System.out.println("Main domain of '" + domain1 + "' is: " + getMainDomain(domain1));
+        System.out.println("Main domain of '" + domain2 + "' is: " + getMainDomain(domain2));
+    }
+}
+//Main domain of 'mail.google.com' is: google
+//Main domain of 'archive.sub.domain.com' is: domain
+  
+</code>
+</pre>
+
+<li>lastIndexOf(String str)</li>
+<pre>
+<code>
+public class URLUtility {
+
+    public static String extractSlug(String url) {
+        int lastSlashPosition = url.lastIndexOf('/');
+        
+        if (lastSlashPosition != -1 && lastSlashPosition < url.length() - 1) {
+            return url.substring(lastSlashPosition + 1);
+        }
+        
+        return null;  // No slug found
+    }
+
+    public static void main(String[] args) {
+        String url1 = "https://example.com/articles/java-basics";
+        String url2 = "https://example.com/articles/java-basics?track=123";
+        
+        System.out.println("Slug for '" + url1 + "' is: " + extractSlug(url1));
+        System.out.println("Slug for '" + url2 + "' is: " + extractSlug(url2));
+    }
+}
+//Slug for 'https://example.com/articles/java-basics' is: java-basics
+//Slug for 'https://example.com/articles/java-basics?track=123' is: java-basics?track=123
+  
+</code>
+</pre>
+
+<li>length()</li>
+<pre>
+<code>
+public class RegistrationValidator {
+
+    public static boolean isValidUsername(String username) {
+        int length = username.length();
+        
+        return length >= 5 && length <= 15;
+    }
+
+    public static void main(String[] args) {
+        String user1 = "John";
+        String user2 = "Amanda123";
+        
+        System.out.println("Is '" + user1 + "' a valid username? " + isValidUsername(user1));
+        System.out.println("Is '" + user2 + "' a valid username? " + isValidUsername(user2));
+    }
+}
+//Is 'John' a valid username? false
+//Is 'Amanda123' a valid username? true
+  
+</code>
+</pre>
+
+<li>lines()</li>
+<pre>
+<code>
+import java.util.stream.Stream;
+
+public class NoteProcessor {
+
+    public static long countLines(String note) {
+        return note.lines().count();
+    }
+
+    public static void main(String[] args) {
+        String note1 = "Java is an object-oriented language.
+                        \nIt is widely used for developing applications.
+                        \nJava is platform-independent.";
+
+        String note2 = "Hello, world!\r\nThis is a simple note.";
+        
+        System.out.println("Number of lines in note1: " + countLines(note1));
+        System.out.println("Number of lines in note2: " + countLines(note2));
+    }
+}
+//Number of lines in note1: 3
+//Number of lines in note2: 2
+ 
+</code>
+</pre>
+<li>matches(String regex)</li>
+<pre>
+<code>
+public class EmailValidator {
+
+    public static boolean isValidEmail(String email) {
+        // This is a simple regex for email validation. 
+        //In real-world applications, email validation can be more complex.
+        String regex = "^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$";
+        
+        return email.matches(regex);
+    }
+
+    public static void main(String[] args) {
+        String email1 = "john.doe@example.com";
+        String email2 = "invalid-email.com";
+        
+        System.out.println("'" + email1 + "' is a valid email? " + isValidEmail(email1));
+        System.out.println("'" + email2 + "' is a valid email? " + isValidEmail(email2));
+    }
+}
+//'john.doe@example.com' is a valid email? true
+//'invalid-email.com' is a valid email? false
+
+</code>
+</pre>
+<li>toString()</li>
+<pre>
+<code>
+public class Book {
+
+    private String title;
+    private String author;
+    private String isbn;
+
+    public Book(String title, String author, String isbn) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+    }
+
+    @Override
+    public String toString() {
+        return "Book [Title: " + title + ", Author: " + author + ", ISBN: " + isbn + "]";
+    }
+
+    public static void main(String[] args) {
+        Book book = new Book("The Great Gatsby", "F. Scott Fitzgerald", "123456789");
+        System.out.println(book);
+    }
+}
+//Book [Title: The Great Gatsby, Author: F. Scott Fitzgerald, ISBN: 123456789]
+
+</code>
+</pre>
+</ul>
+</div>
+
+<div class="jav-box">
+<ul>
+
+<li>toUpperCase()</li>
+<pre>
+<code>
+public class CommentModeration {
+
+    public static void main(String[] args) {
+        String userComment = "This is a sample comment.";
+        String uppercasedComment = userComment.toUpperCase();
+
+        System.out.println(uppercasedComment);  // THIS IS A SAMPLE COMMENT.
+    }
+}
+
+</code>
+</pre>
+<li>toUpperCase(Locale locale)</li>
+<pre>
+<code>
+import java.util.Locale;
+
+public class UpperCaseDemo2 {
+
+    public static void main(String[] args) {
+        String wordInTurkish = "i̇stanbul";
+        String uppercasedInDefault = wordInTurkish.toUpperCase(); // This might not be correct for Turkish
+        String uppercasedInTurkish = wordInTurkish.toUpperCase(new Locale("tr", "TR"));  // Correct for Turkish
+
+        System.out.println("Original Word: " + wordInTurkish);
+        System.out.println("Uppercased using Default: " + uppercasedInDefault);
+        System.out.println("Uppercased using Turkish Locale: " + uppercasedInTurkish);
+    }
+}
+    
+</code>
+</pre>
+
+<li>trim()</li>
+<pre>
+<code>
+public class TrimDemo {
+
+    public static void main(String[] args) {
+        String userInput = "   Alice   "; // User accidentally added spaces before and after the username
+        String trimmedInput = userInput.trim();
+
+        System.out.println("Original Input: '" + userInput + "'");
+        System.out.println("Trimmed Input: '" + trimmedInput + "'");
+    }
+}
+//Original Input: '   Alice   '
+//Trimmed Input: 'Alice'
+    
+</code>
+</pre>
+<li>copyValueOf(char[] data)</li>
+<pre>
+<code>
+public class CopyValueOfDemo {
+
+    public static void main(String[] args) {
+        char[] charArray = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'};
+
+        // Convert char array to string using copyValueOf
+        String resultString = String.copyValueOf(charArray);
+
+        System.out.println("Converted String: '" + resultString + "'");
+    }
+}
+//Converted String: 'Hello World'
+    
+</code>
+</pre>
+
+<li>format(Locale l, String format, Object... args)</li>
+<pre>
+<code>
+import java.util.Locale;
+
+public class FormatDemo {
+
+    public static void main(String[] args) {
+        double price = 123.45;
+
+        // Format price for US locale
+        String usPrice = String.format(Locale.US, "Price in US: $%.2f", price);
+
+        // Format price for German locale
+        String germanPrice = String.format(Locale.GERMANY, "Price in Germany: %.2f €", price);
+
+        System.out.println(usPrice);
+        System.out.println(germanPrice);
+    }
+}
+//Price in US: $123.45
+//Price in Germany: 123,45 €
+    
+</code>
+</pre>
+
+<li>format(String format, Object... args)</li>
+<pre>
+<code>
+import java.time.LocalDateTime;
+
+public class FormatDemoWithoutLocale {
+
+    public static void main(String[] args) {
+        int userId = 1234;
+        LocalDateTime loginTime = LocalDateTime.now();
+
+        // Use format to create a log message
+        String logMessage = String.format("User with ID %d logged in at %s", userId, loginTime);
+
+        System.out.println(logMessage);
+    }
+}
+//User with ID 1234 logged in at 2023-10-28T14:55:32.123
+    
+</code>
+</pre>
+<li>join(CharSequence delimiter, CharSequence... elements)</li>
+<pre>
+<code>
+public class JoinDemo {
+
+    public static void main(String[] args) {
+        // Data for a CSV line
+        String name = "Alice";
+        int age = 28;
+        String email = "alice@example.com";
+
+        // Use join to create a CSV line
+        String csvLine = String.join(",", name, String.valueOf(age), email);
+
+        System.out.println(csvLine);
+    }
+}
+//Alice,28,alice@example.com
+    
+</code>
+</pre>
+<li>join(CharSequence delimiter, Iterable<? extends CharSequence> elements)</li>
+<pre>
+<code>
+import java.util.Arrays;
+import java.util.List;
+
+public class JoinIterableDemo {
+
+    public static void main(String[] args) {
+        // A list of song titles in a playlist
+        List<String> playlist = Arrays.asList("Imagine", "Bohemian Rhapsody", "Stairway to Heaven");
+
+        // Use join to create a string of song titles separated by commas
+        String songs = String.join(", ", playlist);
+
+        System.out.println(songs);
+    }
+}
+//Imagine, Bohemian Rhapsody, Stairway to Heaven
+    
+</code>
+</pre>
+
+<li>valueOf(Object obj)</li>
+<pre>
+<code>
+public class ValueOfDemo {
+
+    public static void main(String[] args) {
+        Object nullObject = null;
+        Object sampleObject = new SampleClass();
+
+        String nullStringRepresentation = String.valueOf(nullObject);
+        String sampleStringRepresentation = String.valueOf(sampleObject);
+
+        System.out.println("Null Object Representation: " + nullStringRepresentation);
+        System.out.println("Sample Object Representation: " + sampleStringRepresentation);
+    }
+
+    static class SampleClass {
+        @Override
+        public String toString() {
+            return "This is a sample object";
+        }
+    }
+}
+//Null Object Representation: null
+//Sample Object Representation: This is a sample object
+    
+</code>
+</pre>
+
+<li>valueOf(boolean b)</li>
+<pre>
+<code>
+public class ValueOfBooleanDemo {
+
+    public static void main(String[] args) {
+        boolean featureEnabled = true;
+
+        String featureStatus = String.valueOf(featureEnabled);
+
+        System.out.println("Feature Status: " + featureStatus);
+    }
+}
+//Feature Status: true
+    
+</code>
+</pre>
+<li>strip()</li>
+<pre>
+<code>
+public class StripDemo {
+
+    public static void main(String[] args) {
+        String userNameInput = "   Alice Wonderland   ";
+        String strippedName = userNameInput.strip();
+
+        System.out.println("Original Input: [" + userNameInput + "]");
+        System.out.println("Stripped Name: [" + strippedName + "]");
+    }
+}
+//Original Input: [   Alice Wonderland   ]
+//Stripped Name: [Alice Wonderland]
+    
+</code>
+</pre>
+</ul>
+
+<ul>
+<li>regionMatches(boolean ignoreCase, int toffset, String other, int ooffset, int len)</li>
+<pre>
+<code>
+public class RegionMatchesDemo {
+
+    public static void main(String[] args) {
+        String str1 = "The Quick Brown Fox";
+        String str2 = "THE QUICK BROWN FOX JUMPS";
+
+        // Compare "Quick Brown Fox" from str1 with "QUICK BROWN FOX" from str2
+        boolean result = str1.regionMatches(true, 4, str2, 4, 15);
+
+        if (result) {
+            System.out.println("The regions match.");
+        } else {
+            System.out.println("The regions do not match.");
+        }
+    }
+}
+//The regions match.
+    
+</code>
+</pre>
+
+<li>repeat(int count)</li>
+<pre>
+<code>
+public class RepeatDemo {
+
+    public static void main(String[] args) {
+        String separator = "-".repeat(30);
+
+        System.out.println("User Details");
+        System.out.println(separator);
+        System.out.println("Name: Alice");
+        System.out.println("Age: 28");
+        System.out.println(separator);
+        System.out.println("End of Details");
+    }
+}
+/*
+User Details
+------------------------------
+Name: Alice
+Age: 28
+------------------------------
+End of Details
+
+*/
+</code>
+</pre>
+
+<li>replace(char oldChar, char newChar)</li>
+<pre>
+<code>
+public class ReplaceDemo {
+
+    public static void main(String[] args) {
+        String rawData = "John|Doe|28|Developer";
+        
+        // Replacing pipe with comma as a delimiter
+        String processedData = rawData.replace('|', ',');
+
+        System.out.println("Original Data: " + rawData);
+        System.out.println("Processed Data: " + processedData);
+    }
+}
+//Original Data: John|Doe|28|Developer
+//Processed Data: John,Doe,28,Developer
+    
+</code>
+</pre>
+
+<li>replace(CharSequence target, CharSequence replacement)</li>
+<pre>
+<code>
+public class ReplaceDemo {
+
+    public static void main(String[] args) {
+        String text = "It was teh best of times, it was teh worst of times.";
+
+        // Correcting the typo 'teh' to 'the'
+        String correctedText = text.replace("teh", "the");
+
+        System.out.println("Original Text: " + text);
+        System.out.println("Corrected Text: " + correctedText);
+    }
+}
+//Original Text: It was teh best of times, it was teh worst of times.
+//Corrected Text: It was the best of times, it was the worst of times.
+  
+</code>
+</pre>
+<li>replaceAll(String regex, String replacement)</li>
+<pre>
+<code>
+public class ReplaceAllDemo {
+
+    public static void main(String[] args) {
+        String blogContent = "my website at http://www.example.com and\n 
+                             portfolio at https://portfolio.com";
+
+        // Convert plain URLs into clickable hyperlinks using regex
+        String transformedContent = blogContent.replaceAll(
+            "(https?://\\S+)",
+            "< a href=\"$1\">$1</a>"
+        );
+
+        System.out.println("Original Content: " + blogContent);
+        System.out.println("Transformed Content: " + transformedContent);
+    }
+}
+//Original Content: Check out my website at http://www.example.com 
+and my portfolio at https://portfolio.com
+//Transformed Content: Check out my website at 
+<a href="http://www.example.com">http://www.example.com</a> and my portfolio at 
+<a href="https://portfolio.com">https://portfolio.com</a>
+    
+</code>
+</pre>
+
+<li>replaceFirst(String regex, String replacement)</li>
+<li>split(String regex)</li>
+<li>split(String regex, int limit)</li>
+<li>startsWith(String prefix)</li>
+<li>startsWith(String prefix, int toffset)</li>
+
+<li>stripLeading()</li>
+<li>stripTrailing()</li>
+<li>substring(int beginIndex)</li>
+<li>substring(int beginIndex, int endIndex)</li>
+<li>toCharArray()</li>
+<li>toLowerCase()</li>
+<li>toLowerCase(Locale locale)</li>
+</ul>
+
+
+
 </div>
 
 <hr>
 <h3>Arrays Methods</h3>
 <div class="jav-box">
-   
-        <ul>
-            <li>sort(byte[] a)</li>
-            <li>sort(byte[] a, int fromIndex, int toIndex)</li>
-            <li>parallelSort(byte[] a)</li>
-            <li>parallelSort(byte[] a, int fromIndex, int toIndex)</li>
-            <li>binarySearch(byte[] a, byte key)</li>
-            <li>binarySearch(byte[] a, int fromIndex, int toIndex, byte key)</li>
-            <li>equals(byte[] a, byte[] a2)</li>
-            <li>deepEquals(Object[] a1, Object[] a2)</li>
-            </ul>
-            <ul>
-            <li>fill(byte[] a, byte val)</li>
-            <li>fill(byte[] a, int fromIndex, int toIndex, byte val)</li>
-            <li>copyOf(byte[] original, int newLength)</li>
-            <li>copyOfRange(byte[] original, int from, int to)</li>
-            <li>asList(T... a)</li>
-            <li>toString(byte[] a)</li>
-            <li>deepToString(Object[] a)</li>
-            <li>hashCode(byte[] a)</li>
-            </ul>
-            <ul>
-            <li>deepHashCode(Object[] a)</li>
-            <li>setAll(T[] array, IntFunction<? extends T> generator)</li>
-            <li>parallelSetAll(T[] array, IntFunction<? extends T> generator)</li>
-            <li>spliterator(T[] array)</li>
-            <li>stream(T[] array)</li>
-            <li>stream(T[] array, int startInclusive, int endExclusive)</li>
-            <li>parallelPrefix(int[] array, IntBinaryOperator op)</li>
-            <li>mismatch(byte[] a, byte[] a2)</li>
-        </ul>
+
+<ul>
+<li>sort(byte[] a)</li>
+<li>sort(byte[] a, int fromIndex, int toIndex)</li>
+<li>parallelSort(byte[] a)</li>
+<li>parallelSort(byte[] a, int fromIndex, int toIndex)</li>
+<li>binarySearch(byte[] a, byte key)</li>
+<li>binarySearch(byte[] a, int fromIndex, int toIndex, byte key)</li>
+<li>equals(byte[] a, byte[] a2)</li>
+<li>deepEquals(Object[] a1, Object[] a2)</li>
+</ul>
+<ul>
+<li>fill(byte[] a, byte val)</li>
+<li>fill(byte[] a, int fromIndex, int toIndex, byte val)</li>
+<li>copyOf(byte[] original, int newLength)</li>
+<li>copyOfRange(byte[] original, int from, int to)</li>
+<li>asList(T... a)</li>
+<li>toString(byte[] a)</li>
+<li>deepToString(Object[] a)</li>
+<li>hashCode(byte[] a)</li>
+</ul>
+<ul>
+<li>deepHashCode(Object[] a)</li>
+<li>setAll(T[] array, IntFunction<? extends T> generator)</li>
+<li>parallelSetAll(T[] array, IntFunction<? extends T> generator)</li>
+<li>spliterator(T[] array)</li>
+<li>stream(T[] array)</li>
+<li>stream(T[] array, int startInclusive, int endExclusive)</li>
+<li>parallelPrefix(int[] array, IntBinaryOperator op)</li>
+<li>mismatch(byte[] a, byte[] a2)</li>
+</ul>
         
 
 </div>
