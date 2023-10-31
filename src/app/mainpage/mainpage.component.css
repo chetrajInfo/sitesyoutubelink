@@ -238,6 +238,33 @@ h3 {
     color: blue;
   }
 
+.git-link-content{
+   display: flex;
+   gap: 2rem;
+   margin-left: 1.3rem;
+}
+
+  .github-link{
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+    box-shadow: 2px 2px 2px 2px gray;
+    width: fit-content;
+    margin-top: 2rem;
+    border-radius: 15%;
+ 
+  }
+
+  .github-link ul li {
+    list-style: none;
+    text-align: center;
+    line-height: 1.7rem;
+  }
+  .github-link ul li a{
+    color: red;
+    text-decoration: underline;
+  }
+
 @media screen and (max-width: 600px) {
     /* Hide the navigation menu by default */
     nav {
@@ -251,6 +278,13 @@ h3 {
     .menu-toggle {
         display: flex;
     }
+
+    footer{
+
+        padding:auto;
+        height: fit-content;
+      }
+
 }
 
 @media screen and (min-width:601px) {
@@ -368,4 +402,13 @@ nav{
 }
 
 
+.git-link-content{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+ .github-link{
+    width: 90%;
+    
+ }
 }

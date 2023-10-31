@@ -4,6 +4,7 @@
     <div>
         <h1><i>Useful Sites and Videos</i></h1>
     </div> 
+   
     <div>  
     </div>
 </header>
@@ -32,7 +33,7 @@
     <a href="https://en.wikipedia.org/wiki/Java_version_history" target="_blank">JavaPackage</a>
   </div>
   <div  class="my-fav">
-    <a href="../assets/cheatsheet.html" target="_blank">CheatSheet</a>
+    <a href="../assets/cheatsheet.html" target="_blank">CodeSheet</a>
   </div>
 </nav>
 
@@ -100,8 +101,62 @@
           </li>
         </ul>
       </div>
-      
+ 
 </div>
+
+<div class="git-link-content">
+
+  <div class="github-link">
+    <h2>GitHub Links To Check</h2>
+    <ul *ngIf="selectedSite">
+      <li *ngFor="let linkObj of selectedSite.githublink">
+        <a [href]="linkObj[getKey(linkObj)]" target="_blank">
+          {{ getKey( linkObj) }}
+        </a>
+      </li>
+    </ul>
+    
+  </div> 
+
+  <div class="github-link">
+    <h2>Discussion Forum To Post</h2>
+    <ul *ngIf="selectedSite">
+      <li *ngFor="let linkObj of selectedSite.discussforum">
+        <a [href]="linkObj[getKey(linkObj)]" target="_blank">
+          {{ getKey( linkObj) }}
+        </a>
+      </li>
+    </ul>
+    
+  </div>
+
+  <div class="github-link">
+    <h2>Easy Cheatsheet To Understand</h2>
+    <ul *ngIf="selectedSite">
+      <li *ngFor="let linkObj of selectedSite.cheatsheet">
+        <a [href]="linkObj[getKey(linkObj)]" target="_blank">
+          {{ getKey( linkObj) }}
+        </a>
+      </li>
+    </ul>
+    
+  </div>
+
+
+
+  <div class="github-link">
+    <h2>Books That Are Useful</h2>
+    <ul *ngIf="selectedSite">
+      <li *ngFor="let linkObj of selectedSite.books">
+        <a [href]="linkObj[getKey(linkObj)]" target="_blank">
+          {{ getKey( linkObj) }}
+        </a>
+      </li>
+    </ul>
+    
+  </div>
+</div>
+
 
 <div class="corejava">
   <h3>Core Java Solved Project For Better Understanding.</h3>

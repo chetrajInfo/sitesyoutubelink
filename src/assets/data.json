@@ -42,7 +42,47 @@
           {"Java67 Discussion":"https://www.java67.com/"},
           {"Jenkov Java Tutorial":"https://jenkov.com/"},
           {"DZone Java Zone":"https://dzone.com/java"}
-         ]
+         ],
+
+         "githublink":[
+
+          {"MTHLI Java":"https://github.com/mthli/Java/blob/master/CoreJava/v1ch03/CompoundInterest/CompoundInterest.java"},
+          {"Shashi Raj Raja":"https://github.com/shashirajraja/onlinebookstore/tree/master/src/main"},
+          {"Kisan Rajput32":"https://github.com/kishanrajput23/Java-Projects-Collections/blob/main/ATM/Account.java"},
+          {"Suryakanth Core Concept":"https://github.com/Suryakant-Bharti/Important-Java-Concepts/blob/master/java_basicsII_and_collections/collections_class/code1_Collections_addAll_method.java"}
+         
+        ],
+
+        "discussforum":[
+          {"Java Forum Discussion":"https://www.javaprogrammingforums.com/forum.php"},
+          {"Reddit Java Forum":"https://www.reddit.com/r/learnjava/comments/17htdrq/advantages_of_using_java_over_other_backend/"},
+          {"Stack Overflow Question Tagged":"https://stackoverflow.com/questions/tagged/java"},
+          {"Microsoft Azure Java Forum":"https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-java-programming-language/?ef_id=_k_6c58f76c8d7e12e6ec43922ca4c62960_k_&OCID=AIDcmme9zx2qiz_SEM__k_6c58f76c8d7e12e6ec43922ca4c62960_k_&msclkid=6c58f76c8d7e12e6ec43922ca4c62960"},
+          {"AWS for Java Syncronization":"https://aws.amazon.com/blogs/developer/category/devops/aws-java-development/"}
+        ],
+
+        "cheatsheet":[
+          {"Princeston CheatSheet For Java":"https://introcs.cs.princeton.edu/java/11cheatsheet/"},
+          {"Code Academy Core Java":"https://www.codecademy.com/learn/learn-java/modules/learn-java-hello-world/cheatsheet"},
+          {"CheatSheet From Geeks For Geeks":"https://www.geeksforgeeks.org/java-cheat-sheet/"},
+          {"Cheatography Java":"https://cheatography.com/tag/java/"},
+          {"Code With Harry Notes":"https://www.codewithharry.com/notes/#google_vignette"},
+          {"Cheat Sheet Org":"https://www.cheat-sheets.org/#Java"}
+        ],
+
+        "books":[
+          {"Cay S. Horstmann":"https://laforce.us/product/core-java-volume-i-fundamentals-11th-11e/"},
+          {"Core Java Simply In Depth":"https://www.thriftbooks.com/w/core-java-simply-in-depth/35528534/item/49952084/?mkwid=%7cdc&pcrid=76759819663239&pkw=&pmt=be&slid=&product=49952084&plc=&pgrid=1228154741466003&ptaid=pla-4580359294924214&utm_source=bing&utm_medium=cpc&utm_campaign=Shopping+%7c+NEW+condition+books&utm_term=&utm_content=%7cdc%7cpcrid%7c76759819663239%7cpkw%7c%7cpmt%7cbe%7cproduct%7c49952084%7cslid%7c%7cpgrid%7c1228154741466003%7cptaid%7cpla-4580359294924214%7c&msclkid=06b2f29c5188152d857a97dcd72c2683#idiq=49952084&edition=62735623"},
+          {"How To Think Like Computer Scientist":"https://www.amazon.com/Think-Java-Like-Computer-Scientist/dp/1492072508/ref=asc_df_1492072508?tag=bingshoppinga-20&linkCode=df0&hvadid=79920843350879&hvnetw=o&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=&hvtargid=pla-4583520391512125&psc=1"},
+          {"Core Java Data Objects":"https://www.thriftbooks.com/w/core-java-data-objects_sameer-tyagi/1636889/#edition=28617675&idiq=36456874"},
+          {"Program Developments In Java":"https://www.thriftbooks.com/w/program-development-in-java-abstraction-specification-and-object-oriented-design_john-guttag_barbara-liskov/287463/item/8750669/?mkwid=%7cdc&pcrid=76897273066016&pkw=&pmt=be&slid=&product=8750669&plc=&pgrid=1230353808544773&ptaid=pla-4580496735976154&utm_source=bing&utm_medium=cpc&utm_campaign=Shopping+-+High+Vol+Frontlist+-+%2410+-+%2450&utm_term=&utm_content=%7cdc%7cpcrid%7c76897273066016%7cpkw%7c%7cpmt%7cbe%7cproduct%7c8750669%7cslid%7c%7cpgrid%7c1230353808544773%7cptaid%7cpla-4580496735976154%7c&msclkid=a247887a66ec19e02d28ed3aef47b65c#idiq=8750669&edition=4587700"},
+          {}
+ 
+        ],
+
+        "interview":[
+
+        ]
     },
 
     {
@@ -68,7 +108,7 @@
         {"Programming Techie": "https://www.youtube.com/watch?v=mPPhcU7oWDU"},
         {"Daily Code Buffer": "https://www.youtube.com/watch?v=zvR-Oif_nxg"},
         {"Java Guides": "https://www.youtube.com/watch?v=VR1zoNomG3w"},
-        {"Tulesko Spring Boot": "https://www.youtube.com/watch?v=35EQXmHKZYs"},
+        {"Think Constructives": "https://www.youtube.com/@ThinkConstructive/about"},
         {"Spring Boot Restful Java Guides": "https://youtu.be/th3uIP7D8nk?si=_HQwT3Wwd92VbAio"},
         {"Free Code Camp Org":"https://youtu.be/vtPkZShrvXQ?si=8LGMJi0n8IEvRhs6"},
         {"Spring Boot Quick Start Java Brains":"https://www.youtube.com/watch?v=msXL2oDexqw&list=RDQMHLG6wUVtIVU&start_radio=1"},
@@ -86,6 +126,14 @@
         {"A Developer Diary":"https://www.adeveloperdiary.com/category/java/spring-boot/"},
         {"Calli Coder":"https://www.callicoder.com/categories/spring-boot/"},
         {"Java 2 Blogs":"https://java2blog.com/spring-boot-tutorial/"}
+      ],
+      
+      "githublink":[
+
+        {"Spring-Boot-Framework":"https://github.com/Spring-Boot-Framework/SpringBoot-Database/blob/master/Project1-SpringBoot-RestAPI-JDBC-MySQL-Gradle/SpringDatabase/src/main/java/spring/database/controller/UserController.java"},
+        {"RameshMF Spring-Boot":"https://github.com/RameshMF/spring-boot-tutorial"},
+        {"Simple Programming Spring-Boot":"https://github.com/SimpleProgramming/simple-springboot-app"}
+       
       ]
     },
 
@@ -185,7 +233,7 @@
       "weblink":[
         {"Oracle Insurane Policy Administration Document":""},
         {"OIPA Dowload":"https://www.oracle.com/middleware/technologies/oracle-policy-automation-downloads.html"},
-        {"Spring IO":"https://spring.io/guides/gs/accessing-data-jpa/"},
+        {"OIPA Information":"https://docs.oracle.com/search/?q=OIPA"},
         {"Spring Doc":"https://docs.spring.io/spring-framework/reference/integration/rest-clients.html"},
         {"Javat Point":"https://www.javatpoint.com/spring-boot-architecture"},
         {"Spring Expression Language":"https://docs.spring.io/spring-framework/reference/core/expressions/evaluation.html"},
