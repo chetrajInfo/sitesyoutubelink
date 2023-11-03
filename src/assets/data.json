@@ -132,20 +132,35 @@
 
         {"Spring-Boot-Framework":"https://github.com/Spring-Boot-Framework/SpringBoot-Database/blob/master/Project1-SpringBoot-RestAPI-JDBC-MySQL-Gradle/SpringDatabase/src/main/java/spring/database/controller/UserController.java"},
         {"RameshMF Spring-Boot":"https://github.com/RameshMF/spring-boot-tutorial"},
-        {"Simple Programming Spring-Boot":"https://github.com/SimpleProgramming/simple-springboot-app"}
+        {"Simple Programming Spring-Boot":"https://github.com/SimpleProgramming/simple-springboot-app"},
+        {"Spring Java Template Team Dodn":"https://github.com/team-dodn/spring-boot-java-template"}
        
       ],
 
       "discussforum":[
-
+        {"Spring Boot application to Heroku":"https://devcenter.heroku.com/articles/deploying-spring-boot-apps-to-heroku"},
+        {"DZone Spring Boot":"https://www.interviewbit.com/blog/difference-between-spring-mvc-and-spring-boot/"},
+        {"Baeldung":"https://medium.com/javarevisited/demystifying-spring-boot-actuator-monitoring-and-managing-your-applications-with-ease-b03d66c211b9"},
+        {"InfoQ Sprigboot Best Practice":"https://www.springcloud.io/post/2022-08/springboot-best-practices/"},
+        {"SpringBoot Community Forum":"https://www.baeldung.com/spring-boot-react-crud"},
+        {"Dev For Spring Environment":"https://dev.to/t/springboot"}
       ],
 
       "cheatsheet":[
+        {"JRebel Short Cheatsheet":"https://www.jrebel.com/blog/spring-annotations-cheat-sheet"},
+        {"Medium Spring Annotation":"https://medium.com/@sureshkumar_95502/spring-spring-boot-annotations-cheat-sheet-de546e0b03d4"},
+        {"Java Guides":"https://www.javaguides.net/2023/07/spring-boot-and-spring-framework.html"},
+        {"Dev Guides Cheatsheet":"https://www.adevguide.com/all-spring-annotations-cheat-sheet/"},
+        {"Application Security Cheatsheet":"https://0xn3va.gitbook.io/cheat-sheets/framework/spring/overview"}
 
       ],
 
       "books":[
-        
+        {"Spring In Action By Craig Wall":"https://www.amazon.com/Spring-Action-Craig-Walls/dp/1617294942?tag=javamysqlanta-20"},
+        {"SpringBoot In Action":"https://www.amazon.com/Spring-Boot-Action-Craig-Walls/dp/1617292540?tag=javamysqlanta-20"},
+        {"Spring Microservices In Action By John Carnell":"https://www.amazon.com/Spring-Microservices-Action-John-Carnell/dp/1617293989?tag=javamysqlanta-20"},
+        {"Spring Security By Splica":"https://www.amazon.com/Spring-Security-Action-Laurentiu-Spilca/dp/1617297739?tag=javamysqlanta-20"},
+        {"SpringBoot and Running":"https://www.amazon.com/Spring-Boot-Running-Building-Applications/dp/1492076988?tag=javamysqlanta-20"}
       ]
     },
 
@@ -166,32 +181,111 @@
         {"Oracle Web Folder": "https://www.oracle.com/webfolder/technetwork/tutorials/obe/db/12c/r1/odb_quickstart/odb_quick_start.html"}
       ],
       "videolink":[
-
+          {"Oracle Video Link To Join":""},
+          {"Oracle NIC IT Academy":"https://www.youtube.com/watch?v=iuvzjf7nU1I"},
+          {"Durgas Software Solution":"https://www.youtube.com/watch?v=aaJF9vb4yKQ&list=PLd3UqWTnYXOnQ5a990TUv7FJVzB2M7h2O"},
+          {"Oracle Session By Dinesh":"https://www.youtube.com/watch?v=j6jKulTC0VQ&list=PLd3UqWTnYXOn8QxZMCkOGAlsf8E3CBYLw"},
+          {"Caleb Curry Oracle Tutorial":"https://www.youtube.com/watch?v=1o0c-zD3iFU"},
+          {"Free Code Camp Video Oracle":"https://www.youtube.com/watch?v=si9tjcnxruU"},
+          {"Oracle ADF Basic":"https://www.youtube.com/watch?v=WW-I3f9vmqk&list=PLp0ed20U4R4jXC_U-4hGTEQlT5C7liRFN"},
+          {"Oracle With Asad":"https://www.youtube.com/watch?v=iZ2a7Km4W0c&list=PLa8AqlzLAw7IFYzUCOkHcHtUBXRbbI1tf"},
+          {"Know Your Database":"https://www.youtube.com/watch?v=-LGYPtidSmw&list=PLB5DA82419C2D99B6"},
+          {"Tech Lake Oracle PL/SQL":"https://www.youtube.com/watch?v=Qmj_sVOMaPM&list=PL50mYnndduIE1MApbjV4xBl_U5YyAzAVj"},
+          {"Manish Sharma Oracle Database":"https://www.youtube.com/watch?v=0NLsJQCvKXY&list=PLL_LQvNX4xKwbz1aJe0RofbT9YeJH9huQ"}
       ],
       "bloglink":[
+          {"Oracle PL/SQL Blogs to check once":""},
+          {"Ask To TOm":"https://asktom.oracle.com/pls/apex/f?p=100:1000::::::"},
+          {"PL/SQL Challenge":"https://plsql-challenge.blogspot.com/"},
+          {"Oracle Base Discussion":"https://oracle-base.com/"},
+          {"That Jeff Smith":"https://www.thatjeffsmith.com/"},
+          {"Datubaze Wordpress Pdf file":"https://datubaze.files.wordpress.com/2015/09/s_feuerstein_oracle-pl_sql-programming_6th-edition_2014.pdf"},
+          {"ScratchPad":"https://feedly.com/i/subscription/feed%2Fhttp%3A%2F%2Fjonathanlewis.wordpress.com%2Ffeed%2F"},
+          {"Oracle developer Blog":"https://feedly.com/i/subscription/feed%2Fhttp%3A%2F%2Fblogs.oracle.com%2Fotn%2Fxml%2Frss.xml"},
+          {"Richard Foote Oracle News":"https://feedly.com/i/subscription/feed%2Fhttp%3A%2F%2Frichardfoote.wordpress.com%2Ffeed%2F"},
+          {"Hemanta Oracle Blog":"https://hemantoracledba.blogspot.com/"},
+          {"DBA Stack Exchange":"https://dba.stackexchange.com/"}
+      ],
 
+      "githublink":[
+          {"Oracle Github":"https://github.com/oracle"},
+          {"Oracle DB-example":"https://github.com/oracle-samples/oracle-db-examples"},
+          {"Raj Speaks Oracle Enterprises":"https://github.com/Rajspeaks/Oracle-Enterprise-Resource-Planning-Tekstac-HandsOn-Solutions"},
+          {"Install Oracle Database":"https://github.com/shakiyam/install-OracleDatabase"},
+          {"UT PL/SQL":"https://github.com/utPLSQL/utPLSQL/blob/develop/examples/award_bonus/award_bonus.sql"}
+      ],
+      "discussforum":[
+          {"DB Support Oracle":"https://www.dbasupport.com/forums/"},
+          {"OraQA Forum":"https://www.orafaq.com/forum/"},
+          {"Oracle Quest Community":"https://questoraclecommunity.org/"},
+          {"Spice Work":"https://community.spiceworks.com/databases/oracle"},
+          {"Razor Sql Landing Oracle":"https://www.razorsql.com/landing/oracle_tool.html?adid=ria13&gclid=CjwKCAjwkY2qBhBDEiwAoQXK5Wlh8yWIwW1RSQJJn3vrBOC3t8hVKZohw68XG1sIySDqnCoBum0msxoCx0UQAvD_BwE"}
+
+      ],
+      "cheatsheet":[
+          {"Dev To Cheatsheet Oracle":"https://dev.to/nehasoni__/oracle-cheat-sheet-5fg7"},
+          {"Cheatography Oracle":"https://cheatography.com/tag/oracle/"},
+          {"Jeff Bourdier Cheat Sheet":"https://jeffbourdier.github.io/oracle/"},
+          {"Clapper Org":"https://software.clapper.org/cheat-sheets/oracle"},
+          {"DBA Class Oracle":"https://dbaclass.com/dba-cheat-sheet/"}
+      ],
+      "books":[
+          {"Oracle Database 19c":"https://docs.oracle.com/en/database/oracle/oracle-database/19/books.html"},
+          {"Oracle Master By Jason Price":"https://www.amazon.com/Oracle-Database-12c-Jason-Price/dp/0071799354/ref=asc_df_0071799354/?tag=hyprod-20&linkCode=df0&hvadid=312114711253&hvpos=&hvnetw=g&hvrand=11963148899699974426&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9027636&hvtargid=pla-546760750714&psc=1"},
+          {"Kevin T Owen Oracle Practice":"https://www.thriftbooks.com/w/building-intelligent-databases-with-oracle-plsql-bkcd-2nd-edition_kevin-t-owens/1377365/item/3060672/?utm_source=google&utm_medium=cpc&utm_campaign=low_vol_backlist_standard_shopping_customer_acquisition&utm_adgroup=&utm_term=&utm_content=593118743925&gclid=CjwKCAjwkY2qBhBDEiwAoQXK5cSX-pKs12AUhhJ77ojIJwm0Cfma_EQxyzneZIDljiXqA9SNmY6PJBoCKX8QAvD_BwE#idiq=3060672&edition=4328753"},
+          {"Mastering Oracle SQL":"https://www.amazon.com/Mastering-Oracle-SQL-Sanjay-Mishra/dp/0596006322/ref=asc_df_0596006322/?tag=hyprod-20&linkCode=df0&hvadid=312125971120&hvpos=&hvnetw=g&hvrand=11963148899699974426&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9027636&hvtargid=pla-601671274317&psc=1&tag=&ref=&adgrpid=61316180839&hvpone=&hvptwo=&hvadid=312125971120&hvpos=&hvnetw=g&hvrand=11963148899699974426&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9027636&hvtargid=pla-601671274317"},
+          {"Oracle Test1 and Test2":"https://www.walmart.com/ip/Pre-Owned-Oracle-DBA-Test-1-and-Test-2-SQL-and-PL-SQL-Database-Administration-Paperback-1576102629-9781576102626/782301120?wmlspartner=wlpa&selectedSellerId=2528&adid=22222222227782301120_2528_14069003552_202077872&wl0=&wl1=g&wl2=c&wl3=42423897272&wl4=aud-393207457166:pla-295289030566&wl5=9027636&wl6=&wl7=&wl8=&wl9=pla&wl10=113510155&wl11=online&wl12=782301120_2528&veh=sem&gclid=CjwKCAjwkY2qBhBDEiwAoQXK5dTlyOOqn_9dP5D5rZWkv6S8qRHFQAkaH2dLhzTkIEo_cCUkCsCF2xoCKc4QAvD_BwE"}
       ]
+
     },
 
     {
       "id":4,
       "name":"MySQL",
       "weblink":[
-        {"Tutorial Point":"https://www.tutorialspoint.com/spring_boot/spring_boot_beans_and_dependency_injection.htm"},
-        {"Spring IO":"https://spring.io/guides/gs/accessing-data-jpa/"},
-        {"Spring Doc":"https://docs.spring.io/spring-framework/reference/integration/rest-clients.html"},
-        {"Javat Point":"https://www.javatpoint.com/spring-boot-architecture"},
-        {"Spring Expression Language":"https://docs.spring.io/spring-framework/reference/core/expressions/evaluation.html"},
-        {"Spring Boot Learn Quest": "https://www.learnquest.com/vendor-training-v20191113.aspx?tp_id=-99&categoryid=1316"},
-        {"Pluralsight": "https://www.pluralsight.com/"},
-        {"Spring Boot in Action": "https://www.manning.com/books/spring-boot-in-action"},
-        {"Spring Boot Tricks": "https://piotrminkowski.com/2021/01/13/spring-boot-tips-tricks-and-techniques/"}
+        {"Link for the SQL visit":""},
+        {"SQL Tutorial Point":"https://www.tutorialspoint.com/sql/index.htm"},
+        {"W3Schools SQL Study":"https://www.w3schools.com/sql/"},
+        {"SQL Tutorial Easy Take":"https://www.sqltutorial.org/"},
+        {"Geeks For Geeks For SQL":"https://www.geeksforgeeks.org/sql-tutorial/"},
+        {"Programiz SQL Tutorial":"https://www.programiz.com/sql"},
+        {"Tutorial Teacher SQL": "https://www.tutorialsteacher.com/sql"},
+        {"Mode SQL Learning": "https://mode.com/sql-tutorial/"},
+        {"MySQL Documentation": "https://dev.mysql.com/doc/"},
+        {"Spectrum IEEE": "https://spectrum.ieee.org/the-rise-of-sql"},
+        {"SQL Zoo":"https://sqlzoo.net/wiki/SQL_Tutorial"}
       ],
       "videolink":[
-
+          {"Video Link For the MySQL Practice":""},
+          {"Programming With Moss":"https://youtu.be/7S_tz1z_5bA?si=msQuKahvjIe_jwNx"},
+          {"Bro Code MySQL Full Course":"https://www.youtube.com/watch?v=5OdVJbNCSso"},
+          {"Free Code Camp":"https://youtu.be/HXV3zeQKqGY?si=cqiI3fhNkDKYW5D5"},
+          {"Simpli Learn":"https://youtu.be/SycDH3NSJUU?si=G7atRTdLsFLcLvGE"},
+          {"Database System Cornell University":"https://youtu.be/4cWkVbC2bNE?si=KNUWOJXt26hb22dS"},
+          {"Edureka MySql":"https://youtu.be/WmGgxTpGs_8?si=avFkBOoDAOWhZdGQ"},
+          {"Advanced Tutorial MySQL":"https://youtu.be/_BvLk3J8nkY?si=U2akpHUtTMkjfZ32"},
+          {"Traversy Media":"https://youtu.be/9ylj9NR0Lcg?si=MHs2VsfSRW8N9E4j"},
+          {"Complete MySQL Beginner To Expert":"https://youtu.be/en6YPAgc6WM?si=z6p4-z0EokMv_bny"},
+          {"Amit Thinks":"https://youtu.be/fFgdnS1laA0?si=2CxaXt-lYk-yVU6B"}
       ],
       "bloglink":[
-
+          {"Blogs For MySQL Database Not To Miss":""},
+          {"Planet MySQL Community":"https://planet.oursqlcommunity.org/"},
+          {"JFG Blog Spot":"https://jfg-mysql.blogspot.com/"},
+          {"Edureka MySQL Blog Post":"https://www.edureka.co/blog/mysql-tutorial/"},
+          {"My Great Learning Blog":"https://www.mygreatlearning.com/blog/mysql-tutorial/"},
+          {"Oracle-Blog":"https://blogs.oracle.com/mysql/"},
+          {"Educative MySQL Tutorial":"https://www.educative.io/blog/mysql-tutorial"},
+          {"W3Schools Blog":"https://www.w3schools.blog/mysql-tutorial"},
+          {"Several Nines Blog":"https://severalnines.com/blog/"},
+          {"Scale Grid":"https://scalegrid.io/blog/"},
+          {"Digital Ocean":"https://www.digitalocean.com/community/tutorials?q=%5BMySQL%5D"}
+      ],
+      "githublink":[
+        {"MySQL Github Link":"https://gist.github.com/bradtraversy/c831baaad44343cc945e76c2e30927b3#mysql-cheat-sheet"},
+        {"Matt Macarty":"https://github.com/mjmacarty/mysql"},
+        {"Crud Operation MySQL":"https://github.com/scbushan05/springboot-jdbctemplate-rest-api-mysql/blob/master/src/main/java/in/bushansirgur/springbootjdbc/controller/EmployeeController.java"},
+        {"Meroware Instance":"https://github.com/merowareinstance/example-mysql-github-workflow-service/blob/master/src/modules/db.js"}
       ]
     },
 

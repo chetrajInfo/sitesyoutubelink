@@ -218,10 +218,11 @@ h3 {
   footer{
     display: flex;
     margin-top:2rem;
-    height: 9vh;
+    height: 12vh;
     width:100%;
     background-color: #dcd7d7;
     padding:0.3rem;
+    justify-content:space-between;
   }
 
   .course-train{
