@@ -218,7 +218,7 @@ h3 {
   footer{
     display: flex;
     margin-top:2rem;
-    height: 12vh;
+    height: 18vh;
     width:100%;
     background-color: #dcd7d7;
     padding:0.3rem;
@@ -281,9 +281,16 @@ h3 {
     }
 
     footer{
-
-        padding:auto;
+        flex-direction: column;
+        row-gap: 1.3rem;
         height: fit-content;
+        box-shadow: 1px 1px 2px 2px inset silver;
+        align-items: center;
+      }
+      .course-train{
+        justify-content: center;
+        align-items: center;
+       
       }
 
 }
